@@ -11,6 +11,7 @@ def draw_circle(r, a):
 
 def reg_pol(n, r):
   draw_circle(r, 360//n)
+
 reg_pol(a, s)
 t.penup()
 t.goto(2*s, s/2)
