@@ -3,7 +3,8 @@ turtle.shape('turtle')
 s = 50
 a = 90
 p = 30
-for i in range(900):
+n = int(input())
+for i in range(n):
   for i in range(4):
     turtle.forward(s)
     turtle.left(a)
