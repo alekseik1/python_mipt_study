@@ -87,3 +87,7 @@ ENV/
 
 # Rope project settings
 .ropeproject
+Будет удалено .idea/misc.xml
+Будет удалено .idea/modules.xml
+Будет удалено .idea/python_mipt_study.iml
+Будет удалено .idea/workspace.xml
