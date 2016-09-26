@@ -18,7 +18,7 @@ if a != 0:
             i += 1
 
         if ap != a and i != 0:
-            ip = i
+            ip = max(i, ip)
             i = 0
 else:
     i = ip = 0
