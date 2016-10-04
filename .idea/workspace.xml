@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8d0a155-5b18-433c-b546-90b51410f3e5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lists_lesson/11.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lists_lesson/8.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lists_lesson/9.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="python_mipt_study.iws" />
@@ -24,16 +23,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="J.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/contest_4/J.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lists_lesson/1.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -114,11 +103,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="8.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="8.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lists_lesson/8.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
               <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="9.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lists_lesson/9.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -153,6 +152,7 @@
         <option value="$PROJECT_DIR$/lists_lesson/7.py" />
         <option value="$PROJECT_DIR$/lists_lesson/11.py" />
         <option value="$PROJECT_DIR$/lists_lesson/8.py" />
+        <option value="$PROJECT_DIR$/lists_lesson/9.py" />
       </list>
     </option>
   </component>
@@ -240,8 +240,18 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="PyConsoleConfigurable.Python Console" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Python.8">
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="python_mipt_study" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="python_mipt_study" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.9">
     <configuration default="false" name="5" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -255,23 +265,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="python_mipt_study" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lists_lesson/5.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="4" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lists_lesson" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="python_mipt_study" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lists_lesson/4.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -323,6 +316,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="python_mipt_study" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lists_lesson/8.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="9" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lists_lesson" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="python_mipt_study" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lists_lesson/9.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -463,18 +473,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.5" />
-      <item index="1" class="java.lang.String" itemvalue="Python.4" />
-      <item index="2" class="java.lang.String" itemvalue="Python.6" />
-      <item index="3" class="java.lang.String" itemvalue="Python.11" />
-      <item index="4" class="java.lang.String" itemvalue="Python.8" />
+      <item index="1" class="java.lang.String" itemvalue="Python.6" />
+      <item index="2" class="java.lang.String" itemvalue="Python.11" />
+      <item index="3" class="java.lang.String" itemvalue="Python.8" />
+      <item index="4" class="java.lang.String" itemvalue="Python.9" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.8" />
-        <item index="1" class="java.lang.String" itemvalue="Python.11" />
-        <item index="2" class="java.lang.String" itemvalue="Python.6" />
-        <item index="3" class="java.lang.String" itemvalue="Python.5" />
-        <item index="4" class="java.lang.String" itemvalue="Python.4" />
+        <item index="0" class="java.lang.String" itemvalue="Python.9" />
+        <item index="1" class="java.lang.String" itemvalue="Python.8" />
+        <item index="2" class="java.lang.String" itemvalue="Python.11" />
+        <item index="3" class="java.lang.String" itemvalue="Python.6" />
+        <item index="4" class="java.lang.String" itemvalue="Python.5" />
       </list>
     </recent_temporary>
   </component>
@@ -565,15 +575,19 @@
           <line>8</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/lists_lesson/9.py</url>
+          <line>6</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="11" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="a[2*k]" language="Python" />
-        <watch expression="(a[2*k] &gt;= T) and (a[1+2*k] &lt;= T)" language="Python" />
-        <watch expression="a[1+2*k]" language="Python" />
-        <watch expression="k" language="Python" />
+        <watch expression="i" language="Python" />
+        <watch expression="a[i:i+k]" language="Python" />
+        <watch expression="a" language="Python" />
       </configuration>
     </watches-manager>
   </component>
@@ -830,6 +844,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lists_lesson/9.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
