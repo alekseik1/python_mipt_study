@@ -1,4 +1,4 @@
-a = [1, 1, 1, 1, 2, 2, 3, 3, 3, 3]
+a = [1, 1, 3, 4, 5, 6]
 #for i in range(1, 6): a.append(i)
 
 def one(b):
@@ -12,8 +12,9 @@ def two():
     return a
 
 def three():
-    for i in range(min(a), max(a)):
-        if a.count(i) - 1 == 0: print(i)
+    for i in range(min(a), max(a)+1):
+        if a.count(i) - 1 == 0: print(i, end= ' ')
+    print('\n')
 
 def four():
     print(max(map(a.count, a)))
