@@ -1,5 +1,6 @@
 import numpy as np
 import random
+import matplotlib.pyplot as plt
 
 def get_percentile(values, bucket_number):
     p = 100/bucket_number
@@ -42,8 +43,41 @@ def values_equalization(values, percentiles, addRandom=False):
 
 v = [3, 4, 1, 2, 5, 6, 7, 8, 9, 10]
 p = (get_percentile(v, 4))
-print(p)
-print(get_percentile_number(7.75, p))
-print(get_percentile_number(5.5, p))
-print(values_equalization(v, p))
-print(values_equalization(v, p, addRandom=True))
+#print(p)
+#print(get_percentile_number(7.75, p))
+#print(get_percentile_number(5.5, p))
+#print(values_equalization(v, p))
+#print(values_equalization(v, p, addRandom=True))
+
+s = []
+with open('img.txt', 'r') as f:
+    for line in f:
+        v = list(map(float, line.strip().split()))
+        s.append(v)
+#print(s)
+data = np.array(s)
+
+
+plt.subplot(321)
+plt.imshow(data, cmap=plt.get_cmap('gray'))
+
+plt.subplot(322)
+val = [data.flatten()]
+plt.hist(val, bins=10)
+
+#n = int(input())
+p = get_percentile(val, 200)
+
+new_data = np.array(values_equalization(data.flatten(), p, addRandom=True))
+ready = new_data.reshape(200, 267)
+
+plt.subplot(323)
+plt.imshow(ready, cmap=plt.get_cmap('gray'))
+
+plt.subplot(324)
+data = [ready.flatten()]
+plt.hist(data, bins=10)
+
+plt.subplot(325)
+
+plt.show()
