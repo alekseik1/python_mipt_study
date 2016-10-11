@@ -1,6 +1,7 @@
 import numpy as np
 import random
 import matplotlib.pyplot as plt
+import pylab
 
 def get_percentile(values, bucket_number):
     p = 100/bucket_number
@@ -58,26 +59,36 @@ with open('img.txt', 'r') as f:
 data = np.array(s)
 
 
-plt.subplot(321)
+plt.subplot(221)
 plt.imshow(data, cmap=plt.get_cmap('gray'))
 
-plt.subplot(322)
+plt.subplot(222)
 val = [data.flatten()]
 plt.hist(val, bins=10)
 
 #n = int(input())
-p = get_percentile(val, 200)
+p = get_percentile(val, 3)
 
 new_data = np.array(values_equalization(data.flatten(), p, addRandom=True))
 ready = new_data.reshape(200, 267)
 
-plt.subplot(323)
-plt.imshow(ready, cmap=plt.get_cmap('gray'))
+for i in range(1, 50):
+    data = np.array(s)
 
-plt.subplot(324)
-data = [ready.flatten()]
-plt.hist(data, bins=10)
+    p = get_percentile(val, i)
+    new_data = np.array(values_equalization(data.flatten(), p, addRandom=True))
+    ready = new_data.reshape(200, 267)
 
-plt.subplot(325)
+    plt.subplot(223)
+    plt.imshow(ready, cmap=plt.get_cmap('gray'))
+    pylab.pause(1)
+
+    new_data = np.array(values_equalization(data.flatten(), p, addRandom=True))
+    ready = new_data.reshape(200, 267)
+    plt.subplot(224)
+    data = [ready.flatten()]
+    plt.hist(data, bins=10)
+
+#plt.subplot(325)
 
 plt.show()
