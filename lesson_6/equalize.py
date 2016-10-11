@@ -23,7 +23,8 @@ def get_percentile_number(value, percentiles):
             return i
     return i-1
 
-def value_equalization(value, percentiles, addRandom=False):
+def value_equalization(value, percentiles, addRandom=False, add_random=False):
+    if add_random: addRandom = True
     if not addRandom:
         idx = get_percentile_number(value, percentiles)
         step = 1 / len(percentiles)
@@ -36,7 +37,8 @@ def value_equalization(value, percentiles, addRandom=False):
         value = idx*step + random_noise
         return value
 
-def values_equalization(values, percentiles, addRandom=False):
+def values_equalization(values, percentiles, addRandom=False, add_random=False):
+    if add_random: addRandom = True
     res = []
     for i in values:
         res.append(value_equalization(i, percentiles, addRandom))
@@ -72,23 +74,34 @@ p = get_percentile(val, 3)
 new_data = np.array(values_equalization(data.flatten(), p, addRandom=True))
 ready = new_data.reshape(200, 267)
 
-for i in range(1, 50):
+if __name__=="__main__":
+    for i in range(1, 50):
+        data = np.array(s)
+
+        p = get_percentile(val, i)
+        new_data = np.array(values_equalization(data.flatten(), p, addRandom=True))
+        ready = new_data.reshape(200, 267)
+
+        plt.subplot(223)
+        plt.imshow(ready, cmap=plt.get_cmap('gray'))
+        pylab.pause(1)
+
+        new_data = np.array(values_equalization(data.flatten(), p, addRandom=True))
+        ready = new_data.reshape(200, 267)
+        plt.subplot(224)
+        data = [ready.flatten()]
+        plt.hist(data, bins=10)
+
+    # plt.subplot(325)
+
+    plt.show()
+else:
     data = np.array(s)
-
-    p = get_percentile(val, i)
+    p = get_percentile(val, 10)
     new_data = np.array(values_equalization(data.flatten(), p, addRandom=True))
     ready = new_data.reshape(200, 267)
-
-    plt.subplot(223)
-    plt.imshow(ready, cmap=plt.get_cmap('gray'))
-    pylab.pause(1)
-
     new_data = np.array(values_equalization(data.flatten(), p, addRandom=True))
     ready = new_data.reshape(200, 267)
-    plt.subplot(224)
     data = [ready.flatten()]
-    plt.hist(data, bins=10)
 
-#plt.subplot(325)
 
-plt.show()
