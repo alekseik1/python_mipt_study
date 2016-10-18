@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/control_contest/I.py" line="56" mnemonic="9" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c8d0a155-5b18-433c-b546-90b51410f3e5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/control_contest/I.py" afterPath="$PROJECT_DIR$/control_contest/I.py" />
@@ -75,8 +78,8 @@
       <file leaf-file-name="I.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/control_contest/I.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
+            <state relative-caret-position="322">
+              <caret line="25" column="44" selection-start-line="0" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -571,7 +574,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="54" />
+      <option name="time" value="55" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -976,8 +979,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/control_contest/I.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
+        <state relative-caret-position="322">
+          <caret line="25" column="44" selection-start-line="0" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -17,19 +17,62 @@ if div(Vx1, Vx2, t)/t == div(Vy1, Vy2, t)/t == div(Vz1, Vz2, t)/t:
     if not (x1 == x2 and y1 == y2 and z1 == z2):
         print(0)
         exit(0)
+
+    t = div((x1 - x2), (Vx2 - Vx1))
+    tx1 = div((x1 - x2), (Vx2 - Vx1), t) / t
+    ty1 = div((y1 - y2), (Vy2 - Vy1), t) / t
+    tz1 = div((z1 - z2), (Vz2 - Vz1), t) / t
+
+    tx2 = div((x1 - x3), (Vx3 - Vx1), t) / t
+    ty2 = div((y1 - y3), (Vy3 - Vy1), t) / t
+    tz2 = div((z1 - z3), (Vz3 - Vz1), t) / t
+
+    if tx1 == tx2  and ty1 == ty2 and tz1 == tz2:
+        print(1)
+    else:
+        print(0)
+    exit(0)
 t = div(Vx1, Vx3)
 if div(Vx1, Vx3, t)/t == div(Vy1, Vy3, t)/t == div(Vz1, Vz3, t)/t:
     if not (x1 == x3 and y1 == y3 and z1 == z3):
         print(0)
         exit(0)
+
+    t = div((x1 - x2), (Vx2 - Vx1))
+    tx1 = div((x1 - x2), (Vx2 - Vx1), t) / t
+    ty1 = div((y1 - y2), (Vy2 - Vy1), t) / t
+    tz1 = div((z1 - z2), (Vz2 - Vz1), t) / t
+
+    tx3 = div((x2 - x3), (Vx3 - Vx2), t) / t
+    ty3 = div((y2 - y3), (Vy3 - Vy2), t) / t
+    tz3 = div((z2 - z3), (Vz3 - Vz2), t) / t
+
+    if tx1 == tx3 and ty1 == ty3 and tz1 == tz3:
+        print(1)
+    else:
+        print(0)
+    exit(0)
 t = div(Vx2, Vx3)
 if div(Vx2, Vx3, t)/t == div(Vy2, Vy3, t)/t == div(Vz2, Vz3, t)/t:
     if not (x2 == x3 and y2 == y3 and z2 == z3):
         print(0)
         exit(0)
+
+    t = div((x1 - x3), (Vx3 - Vx1))
+    tx2 = div((x1 - x3), (Vx3 - Vx1), t) / t
+    ty2 = div((y1 - y3), (Vy3 - Vy1), t) / t
+    tz2 = div((z1 - z3), (Vz3 - Vz1), t) / t
+
+    tx3 = div((x2 - x3), (Vx3 - Vx2), t) / t
+    ty3 = div((y2 - y3), (Vy3 - Vy2), t) / t
+    tz3 = div((z2 - z3), (Vz3 - Vz2), t) / t
+
+    if tx2 == tx3 and ty2 == ty3 and tz2 == tz3:
+        print(1)
     else:
-        print(-1)
-        exit(0)
+        print(0)
+    exit(0)
+
 
 # Все векторы попарно неколлинеарны
 
