@@ -95,8 +95,8 @@
       <file leaf-file-name="D.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/contest_6/D.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="31" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="31" />
+            <state relative-caret-position="18">
+              <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -621,16 +621,6 @@
           <line>2</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/contest_6/D.py</url>
-          <line>40</line>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/contest_6/D.py</url>
-          <line>16</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -981,8 +971,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/contest_6/D.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="31" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="31" />
+        <state relative-caret-position="18">
+          <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
           <folding />
         </state>
       </provider>
