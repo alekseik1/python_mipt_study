@@ -1,21 +1,15 @@
-def SwapColumns(A, a, b):
-    j = len(A[0])
-    i = len(A)
-    #ret = A[:]
-    for k in range(i):
-        #ret[k][b], ret[k][a] = A[k][a], A[k][b]
-        A[k][b], A[k][a] = A[k][a], A[k][b]
+B = list(map(int, input().split()))
+A = []
+for i in range(B[0]):
+    A.append(list(map(int, input().split())))
+C = list(map(int, input().split()))
+def SwapColumns(A, i, j):
+    n = len(A)
+    for k in range(n):
+        A[k][i], A[k][j] = A[k][j], A[k][i]
     return A
-B = []
-while(True):
-    k = list(map(int, input().split()))
-    if k != []:
-        B.append(k)
-    else:
-        break
-
-B = SwapColumns(B[:-2][:-2], B[-1][0], B[-1][1])
-for i in range(len(B)):
-    for j in range(len(B[0])):
-        print(B[i][j], end=' ')
-    print('')
+SwapColumns(A, C[0], C[1])
+for i in range(B[0]):
+    for j in range(B[1]-1):
+        print(A[i][j], end=' ')
+    print(A[i][B[1]-1])
