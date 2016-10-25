@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8d0a155-5b18-433c-b546-90b51410f3e5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lesson_8/6.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lesson_8/en-ru_6.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lesson_8/6.py" afterPath="$PROJECT_DIR$/lesson_8/6.py" />
     </list>
     <ignored path="python_mipt_study.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,7 +71,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="324">
               <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-              <folding />
+              <folding>
+                <marker date="1477381446323" expanded="true" signature="246:393" ph="..." />
+                <marker date="1477381446323" expanded="true" signature="279:377" ph="..." />
+                <marker date="1477381446323" expanded="true" signature="488:538" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,7 +94,7 @@
         <entry file="file://$PROJECT_DIR$/lesson_8/6.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+              <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -554,7 +557,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32808718" sideWeight="0.4975" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32808718" sideWeight="0.4975" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3362391" sideWeight="0.5123652" order="2" side_tool="false" content_ui="tabs" x="0" y="358" width="1600" height="300" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3362391" sideWeight="0.5123652" order="2" side_tool="false" content_ui="tabs" x="0" y="358" width="1600" height="300" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3362391" sideWeight="0.48763475" order="9" side_tool="false" content_ui="tabs" x="408" y="355" width="784" height="270" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -995,14 +998,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-          <folding />
+          <folding>
+            <marker date="1477381446323" expanded="true" signature="246:393" ph="..." />
+            <marker date="1477381446323" expanded="true" signature="279:377" ph="..." />
+            <marker date="1477381446323" expanded="true" signature="488:538" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lesson_8/6.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
           <folding />
         </state>
       </provider>
