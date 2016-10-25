@@ -29,7 +29,7 @@
       <file leaf-file-name="J.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contest_6/J.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
+            <state relative-caret-position="0">
               <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
               <folding />
             </state>
@@ -69,13 +69,9 @@
       <file leaf-file-name="4.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lesson_8/4.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-              <folding>
-                <marker date="1477381446323" expanded="true" signature="246:393" ph="..." />
-                <marker date="1477381446323" expanded="true" signature="279:377" ph="..." />
-                <marker date="1477381446323" expanded="true" signature="488:538" ph="..." />
-              </folding>
+            <state relative-caret-position="54">
+              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -83,8 +79,8 @@
       <file leaf-file-name="5.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lesson_8/5.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+            <state relative-caret-position="198">
+              <caret line="11" column="8" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -93,8 +89,8 @@
       <file leaf-file-name="6.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lesson_8/6.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+            <state relative-caret-position="144">
+              <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -103,8 +99,8 @@
       <file leaf-file-name="en-ru_6.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lesson_8/en-ru_6.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9648">
-              <caret line="109" column="14" selection-start-line="109" selection-start-column="14" selection-end-line="109" selection-end-column="14" />
+            <state relative-caret-position="175">
+              <caret line="653" column="30" selection-start-line="653" selection-start-column="30" selection-end-line="653" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -125,7 +121,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lists_lesson/7.py" />
         <option value="$PROJECT_DIR$/lists_lesson/8.py" />
         <option value="$PROJECT_DIR$/lists_lesson/9.py" />
         <option value="$PROJECT_DIR$/lists_lesson/10.py" />
@@ -172,10 +167,11 @@
         <option value="$PROJECT_DIR$/lesson_8/input.txt" />
         <option value="$PROJECT_DIR$/lesson_8/4.py" />
         <option value="$PROJECT_DIR$/lesson_8/input_5.txt" />
-        <option value="$PROJECT_DIR$/lesson_8/5.py" />
         <option value="$PROJECT_DIR$/lesson_8/en-ru_6.txt" />
         <option value="$PROJECT_DIR$/lesson_8/en-ru.txt" />
+        <option value="$PROJECT_DIR$/lesson_8/5.py" />
         <option value="$PROJECT_DIR$/lesson_8/6.py" />
+        <option value="$PROJECT_DIR$/lesson_8/test.py" />
       </list>
     </option>
   </component>
@@ -288,24 +284,7 @@
       </console-settings>
     </option>
   </component>
-  <component name="RunManager" selected="Python.6">
-    <configuration default="false" name="2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lesson_8" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="python_mipt_study" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lesson_8/2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.test">
     <configuration default="false" name="3" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -370,6 +349,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="python_mipt_study" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lesson_8/6.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lesson_8" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="python_mipt_study" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lesson_8/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -509,19 +505,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.2" />
-      <item index="1" class="java.lang.String" itemvalue="Python.3" />
-      <item index="2" class="java.lang.String" itemvalue="Python.4" />
-      <item index="3" class="java.lang.String" itemvalue="Python.5" />
-      <item index="4" class="java.lang.String" itemvalue="Python.6" />
+      <item index="0" class="java.lang.String" itemvalue="Python.3" />
+      <item index="1" class="java.lang.String" itemvalue="Python.4" />
+      <item index="2" class="java.lang.String" itemvalue="Python.5" />
+      <item index="3" class="java.lang.String" itemvalue="Python.6" />
+      <item index="4" class="java.lang.String" itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.6" />
-        <item index="1" class="java.lang.String" itemvalue="Python.5" />
-        <item index="2" class="java.lang.String" itemvalue="Python.4" />
-        <item index="3" class="java.lang.String" itemvalue="Python.3" />
-        <item index="4" class="java.lang.String" itemvalue="Python.2" />
+        <item index="0" class="java.lang.String" itemvalue="Python.test" />
+        <item index="1" class="java.lang.String" itemvalue="Python.6" />
+        <item index="2" class="java.lang.String" itemvalue="Python.5" />
+        <item index="3" class="java.lang.String" itemvalue="Python.4" />
+        <item index="4" class="java.lang.String" itemvalue="Python.3" />
       </list>
     </recent_temporary>
   </component>
@@ -648,13 +644,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/contest_5/C.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/contest_4/G.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -916,7 +905,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/contest_6/J.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
+        <state relative-caret-position="0">
           <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
           <folding />
         </state>
@@ -938,38 +927,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lesson_8/input.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lesson_8/output.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="34" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="2232" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lesson_8/5.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lesson_8/input_5.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="881">
-          <caret line="178" column="16" selection-start-line="178" selection-start-column="16" selection-end-line="178" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lesson_8/3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
@@ -978,38 +935,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lesson_8/4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lesson_8/input_5.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="178" column="16" selection-start-line="178" selection-start-column="16" selection-end-line="178" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lesson_8/en-ru_6.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9648">
-          <caret line="109" column="14" selection-start-line="109" selection-start-column="14" selection-end-line="109" selection-end-column="14" />
+        <state relative-caret-position="175">
+          <caret line="653" column="30" selection-start-line="653" selection-start-column="30" selection-end-line="653" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lesson_8/5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="8" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lesson_8/input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lesson_8/en-ru.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="22643" column="22" selection-start-line="22643" selection-start-column="22" selection-end-line="22643" selection-end-column="22" />
+        <state relative-caret-position="179">
+          <caret line="22641" column="26" selection-start-line="22641" selection-start-column="26" selection-end-line="22641" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lesson_8/4.py">
+    <entry file="file://$PROJECT_DIR$/lesson_8/output.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-          <folding>
-            <marker date="1477381446323" expanded="true" signature="246:393" ph="..." />
-            <marker date="1477381446323" expanded="true" signature="279:377" ph="..." />
-            <marker date="1477381446323" expanded="true" signature="488:538" ph="..." />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lesson_8/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lesson_8/6.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        <state relative-caret-position="144">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
           <folding />
         </state>
       </provider>
