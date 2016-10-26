@@ -6,7 +6,7 @@ a = {}
 # Read dict
 for i in dic:
     tmp = i.split('\t-\t')
-    a[tmp[0]] = tmp[1]
+    a[tmp[0]] = tmp[len(tmp)-1]
 
 #Read text
 f = open('input.txt')
