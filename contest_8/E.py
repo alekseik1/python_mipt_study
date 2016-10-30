@@ -1,11 +1,11 @@
 a = input()
 k = 0
-tmp = []
-if a.count('(') != a.count(')'):
-    print('NO')
+for ch in a:
+    if ch == '(': k += 1
+    elif ch == ')':
+        k -= 1
+        if k < 0: break
+if k == 0:
+    print('YES')
 else:
-    for i in a:
-        if i == '(':
-            tmp.append(1)
-        else:
-            tmp.append(-1)
+    print('NO')
