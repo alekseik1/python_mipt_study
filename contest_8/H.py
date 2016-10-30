@@ -1,23 +1,13 @@
-N = int(input())
-l = input().split()
-ml = 0
-l1 = []
-for i in l:
-    if len(i) > ml: ml = len(i)
-for i in l:
-    l1.append('0'*(ml-len(i)) + i)
-for i in range(len(l1)):
-    l1[i] = l1[i][::-1]
-l = l1
-l = list(map(int, l))
-l.sort()
-for i in range(len(l)):
-    l[i] = str(l[i])
-    l[i] = l[i][::-1]
-for i in range(len(l)):
-    j = 0
-    while True:
-        if int(l[i][j]) != 0: break
-        j += 1
-    l[i] = l[i][j::]
-print(*l)
+def do_sort(g,i):
+    if(len(g)-(i+1)<0):
+        return '0'
+    else:
+        return g[len(g)-(i+1)]
+def sort_magic(Makl,n):
+    for i in range(n):
+        Makl.sort(key=lambda g: do_sort(g, n-1-i))
+    return Makl
+k=int(input())
+A=list(map(str,input().strip().split()))
+A=sort_magic(A,6)
+print(' '.join(A))
