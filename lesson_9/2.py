@@ -1,5 +1,4 @@
 import argparse
-import sys
 parser = argparse.ArgumentParser(
     # краткое описание программы
     description='IT-калькулятор'

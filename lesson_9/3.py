@@ -1,6 +1,5 @@
 import argparse
 import os
-import sys
 parser = argparse.ArgumentParser(
     description='cat-костыль для файла'
 )
