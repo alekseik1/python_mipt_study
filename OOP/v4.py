@@ -53,5 +53,5 @@ for i in A:
             if i.plus(j, k) > maxS:
                 maxS = i.plus(j, k)
 
-print ('Max P=', max)
+print ('Max P=', maxP)
 print ('Max S=', maxS)
