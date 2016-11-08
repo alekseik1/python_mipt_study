@@ -118,7 +118,7 @@ class gun():
             canv.itemconfig(self.id, fill='black')
 
 
-class target():
+class target1():
     """ Класс target описывает цель. """
     def __init__(self):
         self.points = 0
@@ -144,16 +144,44 @@ class target():
         canv.itemconfig(self.id_points, text=self.points)
 
 
-t1 = target()
+t1 = target1()
 screen1 = canv.create_text(400, 300, text='', font='28')
 g1 = gun()
 bullet = 0
 balls = []
 
+class target2():
+    """ Класс target описывает цель. """
+    def __init__(self):
+        self.points = 0
+        self.live = 1
+        self.id = canv.create_oval(0,0,0,0)
+        self.id_points = canv.create_text(30,30,text = self.points,font = '28')
+        self.new_target()
+
+    def new_target(self):
+        """ Инициализация новой цели. """
+        x = self.x = rnd(600, 780)
+        y = self.y = rnd(300, 550)
+        r = self.r = rnd(10, 50)
+        color = self.color = 'red'
+        canv.coords(self.id, x - r, y - r, x + r, y + r)
+        canv.itemconfig(self.id, fill=color)
+
+    def hit(self, points=1):
+        """ Попадание шарика в цель. """
+
+        canv.coords(self.id, -10, -10, -10, -10)
+        self.points += points
+        canv.itemconfig(self.id_points, text=self.points)
+
+
+t2 = target2()
 
 def new_game(event=''):
-    global gun, t1, screen1, balls, bullet
+    global gun, t1, screen1, balls, bullet, t2
     t1.new_target()
+    t2.new_target()
     try:
         canv.itemconfig(screen1, text='')
     except:
@@ -166,12 +194,20 @@ def new_game(event=''):
 
     z = 0.03
     t1.live = 1
-    while t1.live or balls:
+    t2.live = 1
+    while t1.live and t2.live or balls:
         for b in balls:
             b.move()
+            hit = 0
             if b.hittest(t1) and t1.live:
                 t1.live = 0
                 t1.hit()
+                hit += 1
+            if b.hittest(t2) and t2.live:
+                t2.live = 0
+                t2.hit()
+                hit += 1
+            if hit == 2:
                 canv.bind('<Button-1>', '')
                 canv.bind('<ButtonRelease-1>', '')
                 canv.itemconfig(screen1, text='Вы уничтожили цель за ' + str(bullet) + ' выстрелов')
