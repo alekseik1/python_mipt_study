@@ -42,7 +42,7 @@ class ball():
         # Чет работает
         self.x += self.vx
         self.y -= self.vy
-        self.vy -= 5
+        self.vy -= 5 + 0.03*self.vy
         if self.x >= 800:
             self.vx = -self.vx
         if self.x <= 0:
@@ -176,7 +176,6 @@ def new_game(event=''):
                 canv.bind('<ButtonRelease-1>', '')
                 canv.itemconfig(screen1, text='Вы уничтожили цель за ' + str(bullet) + ' выстрелов')
                 canv.delete(gun)
-
                 canv.update()
                 root.after(750, new_game)
         canv.update()
