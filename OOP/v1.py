@@ -6,7 +6,7 @@ class Vector():
     def __str__(self):
         return '[' + str(self.x) + ', ' + str(self.y) + ']'
 
-    def sum(self, sec):
+    def __add__(self, sec):
         assert isinstance(sec, Vector)
         return Vector(str(self.x+sec.x)+','+str(self.y+sec.y))
 
@@ -26,6 +26,7 @@ N = int(input())
 A = []
 for i in range(N):
     A.append(Vector(input()))
+B = A[:]
 for i in range(N):
-    A[i] = abs(A[i])
-print(max(A))
+    B[i] = abs(B[i])
+print(A[B.index(max(B))])
