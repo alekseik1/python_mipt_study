@@ -44,7 +44,7 @@ class ball():
         self.y -= self.vy
         self.ballx = t1.x
         self.bally = t1.y
-        self.ball2x = t1.x
+        self.ball2x = t2.x
         self.ball2y = t2.y
         r = 25
         if t1.live:
@@ -203,7 +203,8 @@ class target2():
 t2 = target2()
 
 def new_game(event=''):
-    global gun, t1, screen1, balls, bullet, t2
+    global gun, t1, screen1, balls, bullet, t2, hit
+    hit = 0
     t1.new_target()
     t2.new_target()
     try:
@@ -222,7 +223,6 @@ def new_game(event=''):
     while t1.live and t2.live or balls:
         for b in balls:
             b.move()
-            hit = 0
             if b.hittest(t1) and t1.live:
                 t1.live = 0
                 t1.hit()
