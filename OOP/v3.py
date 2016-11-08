@@ -17,16 +17,19 @@ class Vector():
     def __abs__(self):
         return (self.x**2+self.y**2)**0.5
 
-#a = Vector('2,5')
-#b = Vector('3,6')
-#print(a.sc_proizv(b))
-#print(a.sum(b))
-#------- 2 task --------
+    def getx(self):
+        return self.x
+
+    def gety(self):
+        return self.y
+
 N = int(input())
 A = []
 for i in range(N):
     A.append(Vector(input()))
-B = A[:]
+Bx = []
+By = []
 for i in range(N):
-    B[i] = abs(B[i])
-print(A[B.index(max(B))])
+    Bx.append(A[i].getx())
+    By.append(A[i].gety())
+print('[' + str(sum(Bx)/N) + ', ' + str(sum(By)/N) + "]")
