@@ -42,6 +42,19 @@ class ball():
         # Чет работает
         self.x += self.vx
         self.y -= self.vy
+        self.ballx = t1.x
+        self.bally = t1.y
+        self.ball2x = t1.x
+        self.ball2y = t2.y
+        r = 25
+        if t1.live:
+            self.ballx += self.vx*0.2
+            self.bally -= self.vy*0.1
+            t1.update_coord(self.ballx + rnd(-r, r), self.bally + rnd(-r, r), t1.r)
+        if t2.live:
+            self.ball2x -= self.vx*(-0.05)
+            self.ball2y += self.vy*0.1
+            t2.update_coord(self.ball2x + rnd(-r, r), self.ball2y + rnd(-r, r), t2.r)
         self.vy -= 5 + 0.03*self.vy
         if self.x >= 800:
             self.vx = -self.vx
@@ -136,6 +149,11 @@ class target1():
         canv.coords(self.id, x - r, y - r, x + r, y + r)
         canv.itemconfig(self.id, fill=color)
 
+    def update_coord(self, x, y, r):
+        canv.coords(self.id, x - r, y - r, x + r, y + r)
+    def get_coord(self):
+        return [self.x, self.y]
+
     def hit(self, points=1):
         """ Попадание шарика в цель. """
 
@@ -167,6 +185,12 @@ class target2():
         color = self.color = 'red'
         canv.coords(self.id, x - r, y - r, x + r, y + r)
         canv.itemconfig(self.id, fill=color)
+
+    def update_coord(self, x, y, r):
+        canv.coords(self.id, x - r, y - r, x + r, y + r)
+
+    def get_coord(self):
+        return [self.x, self.y]
 
     def hit(self, points=1):
         """ Попадание шарика в цель. """
