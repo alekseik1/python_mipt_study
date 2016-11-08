@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8d0a155-5b18-433c-b546-90b51410f3e5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OOP/1.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OOP/lesson.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/OOP/test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/1.py" afterPath="$PROJECT_DIR$/OOP/1.py" />
     </list>
     <ignored path="python_mipt_study.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,8 +72,8 @@
       <file leaf-file-name="1.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/OOP/1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="157" column="39" selection-start-line="157" selection-start-column="39" selection-end-line="157" selection-end-column="39" />
+            <state relative-caret-position="341">
+              <caret line="179" column="31" selection-start-line="179" selection-start-column="31" selection-end-line="179" selection-end-column="31" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -984,8 +981,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/OOP/1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="157" column="39" selection-start-line="157" selection-start-column="39" selection-end-line="157" selection-end-column="39" />
+        <state relative-caret-position="341">
+          <caret line="179" column="31" selection-start-line="179" selection-start-column="31" selection-end-line="179" selection-end-column="31" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>

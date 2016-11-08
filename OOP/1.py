@@ -176,6 +176,7 @@ def new_game(event=''):
                 canv.bind('<ButtonRelease-1>', '')
                 canv.itemconfig(screen1, text='Вы уничтожили цель за ' + str(bullet) + ' выстрелов')
                 canv.delete(gun)
+
                 canv.update()
                 root.after(750, new_game)
         canv.update()
