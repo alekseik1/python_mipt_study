@@ -31,4 +31,4 @@ def draw(l, n):
         else:
             turtle.left(90)
         turtle.forward(x)
-draw(200, 20)
+draw(20, 20)
