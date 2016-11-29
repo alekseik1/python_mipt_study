@@ -47,4 +47,4 @@ def move(l, n):
 
 move(100, 3)
 
-#move_sneg(1000, 10)
+#move_sneg(10000, 10)
