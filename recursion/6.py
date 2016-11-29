@@ -1,5 +1,6 @@
 import turtle
-turtle.speed(50)
+turtle.speed(100)
+
 def do_motion(n, b):
     if n == 0:
         return b
@@ -19,10 +20,10 @@ def do_motion(n, b):
             res.append(b[j])
             j += 1
     return do_motion(n-1, res)
+
 def draw(l, n):
     x = l / n
-    A=[]
-    act = do_motion(n,A)
+    act = do_motion(n, [])
     turtle.forward(x)
     for i in range(len(act)):
         if act[i] == 0:
@@ -30,4 +31,4 @@ def draw(l, n):
         else:
             turtle.left(90)
         turtle.forward(x)
-draw(20, 20)
+draw(200, 20)
