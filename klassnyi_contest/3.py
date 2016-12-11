@@ -1,18 +1,23 @@
+import os
 import sys
-try:
-    A = sys.argv[1]
-    f = open('output.txt', 'w')
+def mag():
     try:
-        f.write(sys.getsizeof(A))
-        f.close()
-        exit(0)
+        A = sys.argv[1]
+        #print(A)
+        f = open('output.txt', 'w')
+        try:
+            #print(sys.getsizeof(A))
+            f.write(str(os.stat(str(A)).st_size))
+            f.close()
+            return 0
+        except:
+            f.write('Can\'t open file' + ' ' + A)
+            f.close()
+            return 2
     except:
-        f.write('Can\'t open file' + ' ' + A)
+        f = open('output.txt', 'w')
+        f.write('Usage: stat filename\n')
         f.close()
-        exit(2)
-except:
-    #Другая посылка
-    f = open('output.txt', 'w')
-    f.write('Usage: stat filename')
-    f.close()
-    exit(1)
+        return 1
+
+exit(mag())
