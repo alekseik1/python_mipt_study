@@ -4,6 +4,7 @@ def get_next():
         return 0
     else:
         return (get_next.seed**2 + 3*get_next.seed)%999 + 1
+
 get_next.seed = int(input())
 x = get_next()
 s = {}
@@ -13,13 +14,13 @@ while x != 0:
     else:
         s[x] += 1
     x = get_next()
-m = 999999999
-r = []
-for key in s:
-    if s[key]<m:
-        m = s[key]
-        r = [key]
-    elif s[key] == m:
-        r.append(key)
-r = sorted(r)
-print(*r)
+maks = 999999999
+res = []
+for i in s:
+    if s[i] < maks:
+        maks = s[i]
+        res = [i]
+    elif s[i] == maks:
+        res.append(i)
+res = sorted(res)
+print(*res)
