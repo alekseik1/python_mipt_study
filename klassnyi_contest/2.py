@@ -1,9 +1,18 @@
 import os
 import sys
-A = os.environ
-B = sys.argv
-for i in B[1:]:
-    try:
-        print(i + '=' + A[i])
-    except:
-        pass
+def A():
+    A = os.environ
+    B = sys.argv
+    if len(B) == 1:
+        return
+    k = 1
+    max_k = int(B[1])
+    for i in B[2:]:
+        if k > max_k:
+            return
+        try:
+            print(i + '=' + A[i])
+            k += 1
+        except:
+            pass
+A()
