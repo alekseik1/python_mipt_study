@@ -1,4 +1,5 @@
 import random
+from collections import Counter
 
 class Atbash:
     alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
@@ -45,6 +46,17 @@ class Monoalphabet:
         self._encode.update(uppercase_code)
         self._decode = {}  # FIXME
 
+    def freq_an(self, s):
+        assert isinstance(s, str)
+        cntr = Counter([x for x in s])
+        for i in cntr:
+            cntr[i] /= len(s)
+        return cntr
+
+    def freq_an_without_counter(self, s):
+        assert isinstance(s, str)
+
+
     def encode(self, text):
         return ''.join([self._encode.get(char, char) for char in text])
 
@@ -52,13 +64,20 @@ class Monoalphabet:
         pass  # FIXME
 
 class Norm_Class:
-    dic = {'о':'в', 'р':'г', 'ц':'о', 'м':'д', 'т':'у', 'г':'и', 'е':'ш', 'с':'м', 'ч':'к', 'щ':'е', 'э':'а', 'ю':'н'}
+    dic = {'о':'в', 'р':'г', 'ц':'о', 'м':'д', 'т':'у', 'г':'и', 'е':'ш', 'с':'м', 'ч':'к', 'щ':'е', 'э':'а', 'ю':'н',
+           'я':'л', 'х':'ь', 'ы':'й', 'ж':'р', 'п':'ф', 'а':'п', 'н':'ж', 'б':'т', 'з':'ы', 'ш':'с', 'й':'з', 'и':'я', 'в':'х',
+           'ф':'ю', 'ь':'б', 'л':'ч', 'ё':'ц', 'д':'ё', 'ъ':'щ', 'к':'э', 'у':'ъ'}
 
     def change_text(self, text):
         return ''.join([self.dic.get(char.lower(), char.lower()) for char in text])
 
-n = Norm_Class()
-print(n.change_text(input()))
+    def test(self, text):
+        alpha = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+        s = open('12', 'r').read()
+        for i in alpha:
+            if i not in s:
+                print(i)
+        #print(s)
 
 def start_atbash():
     cipher = Atbash()
@@ -66,8 +85,6 @@ def start_atbash():
     while line != '.':
         print(cipher.encode(line))
         line = input()
-
-# 19
 
 def start_caesar(key=19):
     #key = int(input('Ээъыцмъ фубз:'))
@@ -89,4 +106,43 @@ def start_mono():
         print(cipher.encode(line))
         line = input()
 
-#start_caesar()
+class Vigenere:
+    alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"  # FIXME
+
+    def __init__(self, keyword):
+        self.alphaindex = {ch: index for index, ch in enumerate(self.alphabet)}
+        self.key = [self.alphaindex[letter] for letter in keyword.lower()]
+
+    def caesar(self, letter, shift):
+        if letter in self.alphaindex:  # шбжцлюэи ьтчоэ
+            index = (self.alphaindex[letter] + shift)%len(self.alphabet)
+            cipherletter = self.alphabet[index]
+        elif letter.lower() in self.alphaindex:  # йэряэоюэи ьтчоэ
+            cipherletter = self.caesar(letter.lower(), shift).upper()
+        else:
+            cipherletter = letter
+        return cipherletter
+
+    def encode(self, line):
+        ciphertext = []
+        for i, letter in enumerate(line):
+            shift = self.key[i % len(self.key)]
+            cipherletter = self.caesar(letter, shift)
+            ciphertext.append(cipherletter)
+
+        return ''.join(ciphertext)
+
+    def decode(self, line):
+        pass  # FIXME
+
+
+def start_kizhner(keyword='виженера'):
+    #keyword = input('keyword=')
+    cipher = Vigenere(keyword)
+
+    line = input()
+    while line != '.':
+        print(cipher.decode(line))
+        line = input()
+
+start_kizhner()
