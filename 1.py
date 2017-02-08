@@ -35,7 +35,7 @@ class Caesar:
         return ''.join([self._encode.get(char, char) for char in text])
 
     def decode(self, line):
-        return ''.join([self._decode.get(char, char) for char in line])
+        return ''.join([self._encode.get(char, char) for char in line])
 
 
 def start_atbash():
@@ -45,13 +45,13 @@ def start_atbash():
         print(cipher.encode(line))
         line = input()
 
-# 14
+# 19
 
-def start_caesar():
-    key = int(input('Ээъыцмъ фубз:'))
+def start_caesar(key=19):
+    #key = int(input('Ээъыцмъ фубз:'))
     cipher = Caesar(key)
     line = input()
-    while line:
+    while line != '.':
         #for i in range(33):
         #    cipher = Caesar(i)
         #    print(cipher.decode(line), i)
