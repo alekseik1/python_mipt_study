@@ -1,5 +1,9 @@
 import random
 from collections import Counter
+import itertools
+
+alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
+
 
 class Atbash:
     alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
@@ -106,8 +110,13 @@ def start_mono():
         print(cipher.encode(line))
         line = input()
 
+
+def start_norm_class():
+    n = Norm_Class()
+    print(n.change_text(input()))
+
 class Vigenere:
-    alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"  # FIXME
+    alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
 
     def __init__(self, keyword):
         self.alphaindex = {ch: index for index, ch in enumerate(self.alphabet)}
@@ -123,6 +132,9 @@ class Vigenere:
             cipherletter = letter
         return cipherletter
 
+    def caesar_reverse(self, letter, shift):
+        return self.caesar(letter, -shift)
+
     def encode(self, line):
         ciphertext = []
         for i, letter in enumerate(line):
@@ -133,8 +145,12 @@ class Vigenere:
         return ''.join(ciphertext)
 
     def decode(self, line):
-        pass  # FIXME
-
+        result = []
+        for i, letter in enumerate(line):
+            shift = self.key[i % len(self.key)]
+            cipherletter = self.caesar_reverse(letter, shift)
+            result.append(cipherletter)
+        return ''.join(result)
 
 def start_kizhner(keyword='виженера'):
     #keyword = input('keyword=')
@@ -142,7 +158,25 @@ def start_kizhner(keyword='виженера'):
 
     line = input()
     while line != '.':
+        #print(line)
         print(cipher.decode(line))
         line = input()
 
-start_kizhner()
+#start_norm_class()
+
+def product(*args, repeat=1):
+    # product('ABCD', 'xy') --> Ax Ay Bx By Cx Cy Dx Dy
+    # product(range(2), repeat=3) --> 000 001 010 011 100 101 110 111
+    pools = [tuple(pool) for pool in args] * repeat
+    result = [[]]
+    for pool in pools:
+        result = [x+[y] for x in result for y in pool]
+    for prod in result:
+        yield tuple(prod)
+
+def brute():
+    A = [''.join(x) for x in product(alphabet, repeat=8)]
+    print(A)
+
+#start_norm_class()
+start_kizhner('столлман')
