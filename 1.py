@@ -1,6 +1,4 @@
-__author__ = 'Timofey Khirianov'
-# -*- coding: utf8 -*-
-
+import random
 
 class Atbash:
     alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
@@ -37,6 +35,30 @@ class Caesar:
     def decode(self, line):
         return ''.join([self._encode.get(char, char) for char in line])
 
+class Monoalphabet:
+    alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"  # FIXME
+
+    def __init__(self, keytable):
+        lowercase_code = {x: y for x, y in zip(self.alphabet, keytable)}
+        uppercase_code = {x.upper(): y.upper() for x, y in zip(self.alphabet, keytable)}
+        self._encode = dict(lowercase_code)
+        self._encode.update(uppercase_code)
+        self._decode = {}  # FIXME
+
+    def encode(self, text):
+        return ''.join([self._encode.get(char, char) for char in text])
+
+    def decode(self, line):
+        pass  # FIXME
+
+class Norm_Class:
+    dic = {'о':'в', 'р':'г', 'ц':'о', 'м':'д', 'т':'у', 'г':'и', 'е':'ш', 'с':'м', 'ч':'к', 'щ':'е', 'э':'а', 'ю':'н'}
+
+    def change_text(self, text):
+        return ''.join([self.dic.get(char.lower(), char.lower()) for char in text])
+
+n = Norm_Class()
+print(n.change_text(input()))
 
 def start_atbash():
     cipher = Atbash()
@@ -58,4 +80,13 @@ def start_caesar(key=19):
         print(cipher.decode(line))
         line = input()
 
-start_caesar()
+def start_mono():
+    key = Monoalphabet.alphabet[:]
+    random.shuffle(key)
+    cipher = Monoalphabet(key)
+    line = input()
+    while line:
+        print(cipher.encode(line))
+        line = input()
+
+#start_caesar()
