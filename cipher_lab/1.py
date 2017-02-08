@@ -40,7 +40,7 @@ class Caesar:
     def decode(self, line):
         return ''.join([self._encode.get(char, char) for char in line])
 
-class Monoalphabet:
+class Monoalphabet:	#Не работает
     alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"  # FIXME
 
     def __init__(self, keytable):
@@ -152,7 +152,7 @@ class Vigenere:
             result.append(cipherletter)
         return ''.join(result)
 
-def start_kizhner(keyword='виженера'):
+def start_kizhner(keyword='столлман'):
     #keyword = input('keyword=')
     cipher = Vigenere(keyword)
 
@@ -162,21 +162,4 @@ def start_kizhner(keyword='виженера'):
         print(cipher.decode(line))
         line = input()
 
-#start_norm_class()
-
-def product(*args, repeat=1):
-    # product('ABCD', 'xy') --> Ax Ay Bx By Cx Cy Dx Dy
-    # product(range(2), repeat=3) --> 000 001 010 011 100 101 110 111
-    pools = [tuple(pool) for pool in args] * repeat
-    result = [[]]
-    for pool in pools:
-        result = [x+[y] for x in result for y in pool]
-    for prod in result:
-        yield tuple(prod)
-
-def brute():
-    A = [''.join(x) for x in product(alphabet, repeat=8)]
-    print(A)
-
-#start_norm_class()
-start_kizhner('столлман')
+start_kizhner()
