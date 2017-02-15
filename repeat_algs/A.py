@@ -7,6 +7,4 @@ for i in range(N):
     B.update([input().split()])
 res = dict()
 for i in A:
-    res.update([[A.get(i), B.get(i)]])
-for i in res.items():
-    print(*i)
+    print(A.get(i), B.get(i))
