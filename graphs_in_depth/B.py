@@ -25,6 +25,13 @@ class Graph():
                 self.dfs(vertex, self.graph_as_list, self.dfs_used)
                 self.number_of_components += 1
 
+    def check_Eiler_existance(self):
+        for edge in self.graph_as_list:
+            if len(edge) % 2 == 1:
+                return False
+        if self.number_of_components == 1:
+            return True
+
     def call_all_friends(self, me, friends, already_called=set()):
         already_called.add(me)
         for friend in friends[me]:
@@ -35,4 +42,7 @@ A = Graph()
 A.read_graph_as_list()
 A.count_components()
 
-print(A.number_of_components)
+if A.check_Eiler_existance():
+    print('YES')
+else:
+    print('NO')
