@@ -2,16 +2,28 @@ class Graph():
 
     graph_as_list = []
     graph_as_matrix = []
+    dfs_used = set()
+    number_of_components = 0
+    N, M = 0, 0
 
     def read_graph_as_list(self):
-        N = int(input())
-        M = int(input())
-        res = [[] for i in range(N)]
-        for edge in range(M):
+        self.N = int(input())
+        self.M = int(input())
+        res = [[] for i in range(self.N)]
+        for edge in range(self.M):
             a, b = [int(x) for x in input().split()]
             res[a].append(b)
             res[b].append(a)
         self.graph_as_list = res
+
+    def dfs(self, vertex, graph, used):
+        self.call_all_friends(vertex, graph, used)
+
+    def count_components(self):
+        for vertex in range(self.N):
+            if vertex not in self.dfs_used:
+                self.dfs(vertex, self.graph_as_list, self.dfs_used)
+                self.number_of_components += 1
 
     def call_all_friends(self, me, friends, already_called=set()):
         already_called.add(me)
@@ -21,4 +33,9 @@ class Graph():
 
 A = Graph()
 A.read_graph_as_list()
-A.call_all_friends(0, A.graph_as_list)
+A.count_components()
+
+if A.number_of_components == 1:
+    print('YES')
+else:
+    print('NO')
