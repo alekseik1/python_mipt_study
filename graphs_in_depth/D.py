@@ -1,34 +1,24 @@
-def check(A):
-    # Кольца все порят! От них надо избавиться)
-    for i in A:
-        for j in A:
-            if i == j[::-1]:
-                A.pop(A.index(i))
-    #print(A)
-    for i in range(len(A)):
-        f = False
-        for s in range(len(A)):
-            if s == i:
-                continue
-            if A[i][0] == A[s][-1] or A[i][-1] == A[s][0]:
-                f = True
-                break
-        if f:
-            continue
-        else:
-            return False
-    return True
+class Graph():
 
-N = int(input())
-M = int(input())
-A = []
-for i in range(M):
-    A.append([int(x) for x in input().split()])
-if N-M > 1:
-    print('NO')
-    exit(0)
+    graph_as_list = []
+    graph_as_matrix = []
 
-if check(A):
-    print('YES')
-else:
-    print('NO')
+    def read_graph_as_list(self):
+        N = int(input())
+        M = int(input())
+        res = [[] for i in range(N)]
+        for edge in range(M):
+            a, b = [int(x) for x in input().split()]
+            res[a].append(b)
+            res[b].append(a)
+        self.graph_as_list = res
+
+    def call_all_friends(self, me, friends, already_called=set()):
+        already_called.add(me)
+        for friend in friends[me]:
+            if friend not in already_called:
+                self.call_all_friends(friend, friends, already_called)
+
+A = Graph()
+A.read_graph_as_list()
+A.call_all_friends(0, A.graph_as_list)
