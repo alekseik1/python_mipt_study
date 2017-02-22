@@ -16,6 +16,7 @@ git clone https://github.com/alekseik1/python_mipt_study_1-2
 - [Klimkou](http://github.com/Klimkou)
 - [alekseik1](http://github.com/alekseik1)
 - [VS-Alex15](http://github.com/VS-Alex15)
+- [Urnguk](http://github.com/Urnguk)
 
 ###### Я хочу помочь проекту, что мне делать?
 Это очень просто! Просто откройте issue здесь, и ваши предложения будут рассмотрены. Форки, пулл реквесты и иже с ним будут с радостью рассмотрены нами)
