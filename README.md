@@ -1,4 +1,5 @@
 # python_mipt_study_1-2
+![alt text](https://raw.githubusercontent.com/VS-Alex15/ITseminars/master/.idea/Ya3RC2m-LVA.jpg)
 ## ООО "Тупой скат"
 Мы снова открылись! Ждем вас каждую среду с 12:00 до 16:00
 ###### Кто мы?
