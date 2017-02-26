@@ -17,6 +17,10 @@ class LinkedList:
         return not(self._link)
 
     def pop(self,data):
+        '''
+        Извлекает из списка связности элемент со значением data.
+        При отстутствии элемента возвращает None
+        '''
         p = self._link
         if p == None:
             return None
@@ -34,6 +38,11 @@ class LinkedList:
                     self._link = p[1]
             return k
     def front(self):
+        '''
+        Функция возвращающая крайний элемент списка связности, при его наличии.
+        Элемент не удаляется.
+        При пустом списке возвращает None
+        '''
         if self.empty():
             return None
         else:
@@ -42,6 +51,9 @@ class LinkedList:
 vertexes = LinkedList()
 
 def dfs_straight(vertex, graph, used = set()):
+    '''Процедура обходы прямого графа,
+    с записью вершиин в глобальный стек vertexes (вершина добавляется в стек сразу после того как становится черной)
+    '''
     used.add(vertex)
     for neighbour in graph[vertex]:
         if neighbour not in used:
@@ -50,9 +62,13 @@ def dfs_straight(vertex, graph, used = set()):
 
 
 def dfs_reverse(vertex, graph, used = set()):
+    '''
+    Обход транспонированного графа, с удалением посещенных
+    вершин из глобального стека vertexes
+    '''
     used.add(vertex)
     vertexes.pop(vertex)
-    linked_components[k].add(vertex)
+    linked_components[k].add(vertex) # глобальный массив множеств вершин отдельных сильносвязных компонент (*)
     for neighbour in graph[vertex]:
         if neighbour not in used:
             dfs_reverse(neighbour, graph, used)
@@ -79,12 +95,12 @@ for vertex in range(N):
     if vertex not in used:
         dfs_straight(vertex, graph, used)
 
-linked_components = []
+linked_components = [] # (*)
 
 k = -1
 used = set()
 
-while not vertexes.empty():
+while not vertexes.empty(): # обход вершин в G^T в порядке убывания временных меток
     k += 1
     linked_components.append(set())
     vertex = vertexes.front()
