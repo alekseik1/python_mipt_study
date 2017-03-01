@@ -26,6 +26,5 @@ for i in range(m):
     G[a][b] = c
     G[b][a] = c
 d, path = dijkstra(G, s)
-for i in range(len(path)):
-    path[i] = list(set(path[i]))
+path[f] = [e for j, e in enumerate(path[f]) if e not in path[f][:j]]
 print(*path[f])
