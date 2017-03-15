@@ -1,37 +1,36 @@
-def read_as_matrix():
-    n, m = [int(x) for x in input().split()]
-    G = {x: {} for x in range(n)}
-    for i in range(m):
-        a, b = [int(x) for x in input().split()]
-        G[a][b] = 1
-    return G
+N, M = map(int, input().split())
+Used = []
+total_Used = set()
+heights = [[] for i in range(N)]
 
-def thereIsCycle(G):
-    cycles = []
-    used = set()
-    for v in range(len(G)):
-        if v in used:
-            continue
-        used.add(v)
-        Que = [v]
-        paths = [[] for i in range(len(G))]
-        paths[v].append(v)
-        while Que:
-            current = Que.pop(0)
-            for neighbour in G[current]:
-                if neighbour in paths[current]:
-                    cycles.append(paths[current][paths[current].index(neighbour):])
-                elif neighbour not in used:
-                    used.add(neighbour)
-                    if len(paths[neighbour])<1 or len(paths[current])+1 < len(paths[neighbour]):
-                        paths[neighbour] = paths[current] + [neighbour]
-                    Que.append(neighbour)
-    return cycles
+for j in range(M):
+    a, b = map(int, input().split())
+    heights[a].append(b)
 
-G = read_as_matrix()
-cycles = thereIsCycle(G)
-if len(cycles)==0:
-    print("YES")
+result = []
+def obhod(heights, Used, element, total_Used):
+
+    if element in Used:
+        result[:] = []
+        for i in range(Used.index(element), len(Used)):
+            result.append(Used[i])
+        return
+    if element in total_Used:
+        return
+    current_Used = []
+    current_Used[:] = Used[:] + [element]
+    total_Used.add(element)
+    for number in heights[element]:
+        obhod(heights, current_Used, number, total_Used)
+        if len(result) > 0:
+            break
+
+
+for n in range(N):
+    if not n in total_Used:
+        obhod(heights, Used, n, total_Used)
+
+if len(result) > 0:
+    print(*result)
 else:
-    minim = sorted(cycles, key=lambda x: len(x))[0]
-    print(*minim)
+    print("YES")
