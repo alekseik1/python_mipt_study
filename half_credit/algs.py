@@ -1,12 +1,13 @@
 class Graph:
 
-    graph_as_matrix = []
-    graph_as_list = []
-    number_of_components = 1
+    graph_as_matrix = []    # Граф в виде матрицы смежности
+    graph_as_matrix_weight = [] # То же самое, но с весами
+    graph_as_list = []      # Граф в виде списка смежности
+    number_of_components = 1    # Число компонент связности графа
     dfs_used = None
     bfs_fired = None
-    spanning_tree = []
-    bfs_time = {}
+    spanning_tree = []      # Остовное дерево графа. Имеет не очень хороший вид, пример: [[1, 2], [2, 3]], где 1, 2, 3 - вершины
+    bfs_time = {}           # Время поджига bfs, т.е. на какой итерации bfs_fire какая вершина загорелась. Имеет стркутуру словаря
 
     def read_graph_as_matrix(self):
         '''
@@ -20,6 +21,20 @@ class Graph:
             graph[a][b] = 1             # Здесь можно было записывать вес, см. ниже
             graph[b][a] = 1             # А этой строки не должно быть, если граф ориентирован!
         self.graph_as_matrix = graph    # Записываем в поле экземпляра
+        return graph                    # Возвращаем как результат
+
+    def read_graph_as_matrix_weight(self):
+        '''
+        Считывает взвешенный граф как матрицу смежности, т.е. A[0][1] будет x, если есть путь из 0 в 1 с весом x.
+        @return: Возвращает матрицу смежности в виде списка в списке, а также записывает ее в поле graph_as_matrix_weight
+        '''
+        N, M = [int(x) for x in input().split()]
+        graph = {v: {k: 0 for k in range(N)} for v in range(N)}
+        for edge in range(M):
+            a, b, c = [int(x) for x in input().split()]
+            graph[a][b] = c             # Здесь можно было записывать вес, см. ниже
+            graph[b][a] = c             # А этой строки не должно быть, если граф ориентирован!
+        self.graph_as_matrix_weight = graph    # Записываем в поле экземпляра
         return graph                    # Возвращаем как результат
 
     def read_graph_as_lists(self):
@@ -118,6 +133,37 @@ class Graph:
         self.number_of_components = number_of_components    # записываем результаты трудов
         return self.number_of_components
 
+    def get_shortest_paths_from_vertex(self, start):
+        """
+        Поиск кратчайших путей из заданной вершины до всех остальных с помощью алгоритма Дейкстры. Граф должен быть
+        задан с помощью read_graph_as_matrix_weight
+        @param start: Вершина, из которой считаем пути
+        @return: Лист из длин путей
+        """
+
+        if self.graph_as_matrix_weight is []:
+            raise AssertionError("Граф должен быть задан через метод read_graph_as_matrix_weight()")
+
+        d = {v: float('+inf') for v in self.graph_as_matrix_weight}     # Сначала везде путь - бесконечность
+        d[start] = 0    # До начальной точки путь имеет длину 0
+        used = set()    # Инициализация
+        while len(used) != len(self.graph_as_matrix_weight):                        # Пока все вершины не помечены:
+            min_d = float('+inf')                                                   # Сначала min_d есть бесконечность
+            for v in d:                                                             # для каждой вершины из графа,
+                if d[v] < min_d and v not in used:                                  # если текущий кратчайший путь до нее меньше min_d и эту вершину мы еще не пометили
+                    current = v                                                     # устанавливаем эту вершину как "рабочую"
+                    min_d = d[v]                                                    # устанавливаем текущий минимум на кратчайший путь до "рабочей" вершины,
+                                                                                    # таким образом, в конце цикла мы имеем: current - наша "рабочая" вершина - указывает на непомеченную вершину с минимальным путем из start, а min_d - на длину этого пути
+            used.add(current)                                                       # закидываем "рабочую" вершину в помеченные
+            for neighbour in self.graph_as_matrix_weight[current]:                  # для каждого соседа "рабочей" вершины:
+                l = d[current] + self.graph_as_matrix_weight[current][neighbour]    # а могли ли мы более выгодно прийти в соседа из "рабочей" вершины через одно ребро?
+                if l < d[neighbour]:                                                # считаем путь в таком случае и сверяем с текущим минимальным путем до соседа
+                    d[neighbour] = l                                                # если оказался меньше, то обновляем значение
+        return d
+
+
 g = Graph()
-g.read_graph_as_lists()
-print(g.count_components_bfs())
+g.read_graph_as_matrix_weight()
+#print(g.bfs_fire_list_graph(0))
+#print(g.spanning_tree)
+print(g.get_shortest_paths_from_vertex(0))
