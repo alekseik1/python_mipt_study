@@ -62,7 +62,7 @@ class Graph:
 
     def count_components_dfs(self):
         """
-        Считает количество компонент связности в графе, заданном листом.
+        Считает количество компонент связности в графе, заданном листом, с помощью обхода в глубину.
         @return: Возвращает число - количество компонент связности, а также записывает его в поле number_of_components
         """
         if self.dfs_used is None:   # Если мы ни разу не считали компоненты, чтобы in self.dfs_used ниже в проверке не вылетал :)
@@ -101,6 +101,23 @@ class Graph:
         self.bfs_time = time
         return self.bfs_fired
 
+    def count_components_bfs(self):
+        """
+        Считает количество компонент связности в графе, заданном листом, через обход в ширину.
+        @return: Возвращает число - количество компонент связности, а также записывает его в поле number_of_components
+        """
+
+        if self.bfs_fired is None:   # Если мы ни разу не считали компоненты, чтобы in self.bfs_fired ниже в проверке не вылетал :)
+            self.bfs_fired = set()
+        number_of_components = 0
+
+        for vertex in range(len(self.graph_as_list)):       # Для каждой вершины,
+            if vertex not in self.bfs_fired:                # если она не была обработана dfs, то
+                self.bfs_fire_list_graph(vertex)            # обрабатываем все вершины функцией dfs, начиная с vertex,
+                number_of_components += 1                   # и увеличиваем число компонент на 1
+        self.number_of_components = number_of_components    # записываем результаты трудов
+        return self.number_of_components
 
 g = Graph()
 g.read_graph_as_lists()
+print(g.count_components_bfs())
