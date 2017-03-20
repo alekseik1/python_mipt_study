@@ -8,6 +8,7 @@ class Graph:
     graph_as_list = []      # Граф в виде списка смежности
     number_of_components = 1    # Число компонент связности графа
     dfs_used = None
+    N, M = 0, 0
     spanning_tree_dfs = []
     bfs_fired = None
     spanning_tree = []      # Остовное дерево графа. Имеет не очень хороший вид, пример: [[1, 2], [2, 3]], где 1, 2, 3 - вершины
@@ -20,6 +21,7 @@ class Graph:
         @return: Возвращает матрицу смежности, а также записывает ее в поле graph_as_matrix
         '''
         N, M = [int(x) for x in input().split()]
+        self.N, self.M = N, M
         graph = [[0] * N for i in range(N)]  # матрица смежностей
         for edge in range(M):
             a, b = [int(x) for x in input().split()]
@@ -35,6 +37,7 @@ class Graph:
         @return: Возвращает матрицу смежности в виде списка в списке, а также записывает ее в поле graph_as_matrix_weight
         '''
         N, M = [int(x) for x in input().split()]
+        self.N, self.M = N, M
         graph = {v: {k: float('+inf') for k in range(N)} for v in range(N)}
         for edge in range(M):
             a, b, c = [int(x) for x in input().split()]
@@ -50,6 +53,7 @@ class Graph:
         @return: Возвращает лист, а также записывает его в поле graph_as_list
         '''
         N, M = [int(x) for x in input().split()]
+        self.N, self.M = N, M
         graph = [[] for i in range(N)]
         for edge in range(M):
             a, b = [int(x) for x in input().split()]
@@ -205,11 +209,33 @@ class Graph:
                     break
         return d, paths
 
+    # TODO: Сделать для любой вершины в качестве начальной
+    def get_shortest_paths_by_floyd_vershel(self, start=0):
+        """
+        Возвращает кратчайшие пути до всех вершин, начиная с 0, через алгоритм Флойда-Уоршелла. НЕ СПОСОБЕН считать для других вершин в качестве начальной, простите, я это не успел написать
+        @param start: Начальная вершина, пока НЕ работает
+        @return: Лист из путей до вершин
+        """
+        INF = 10**11
+        n = self.N
+        A = [[[INF] * n for i in range(n)] for k in range(n + 1)]  # INF - условная бесконечность, n - число ребер
+        W = [[self.graph_as_matrix_weight[i][j] for j in range(self.N)] for i in range(self.N)]     # Супер-массив, строится по правилу: W[i][j] - вес пути из i в j
+        for i in range(self.N): W[i][i] = 0     # Путь из i в i есть 0
+        for i in range(n):
+            A[0][i][:] = W[i]  # При копировании весовой матрицы W расстояние от вершины до себя равно нулю; забиваем матрицу рёбер т.е.расстояния в начальный момент.
+        for k in range(1, n):                                                          # пусть A[k][i][j] - кратчайший путь из i в j, проходящий через ребра с номерами 1..k (помимо самих i и j, естественно)
+            for i in range(n):                                                         # тогда, если кратчайший путь из i в j не проходит через k, то A[k][i][j] = A[k-1][i][j] - в самом деле, разницы между ними нет, т.к. путь не проходит через k
+                for j in range(n):                                                     # либо же есть более короткий путь, но тогда он проходит сначала от i до k через (k-1) вершину, а затем из k в j,
+                    A[k][i][j] = min(A[k - 1][i][j], A[k - 1][i][k] + A[k - 1][k][j])  # в этом случае A[k][i][j] = A[k-1][i][k] + A[k-1][k][j]
+                                                                                       # Мы все это дело проверяем в цикле и выдаем как результат лист A[n-1][start] (да, это лист, потому что А - трехмерный массив, во как!)
+        return A[n-1][start]
+
 
 # Тестирование класса, пожалуйста, не обращайте внимания на этот код
 g = Graph()
 g.read_graph_as_matrix_weight()
 print(g.get_shortest_paths_from_vertex(0))
+print(g.get_shortest_paths_by_floyd_vershel())
 #g.read_graph_as_matrix_weight()
 #print(g.bfs_fire_list_graph(0))
 #print(g.spanning_tree)
