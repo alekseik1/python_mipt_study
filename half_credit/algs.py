@@ -35,7 +35,7 @@ class Graph:
         @return: Возвращает матрицу смежности в виде списка в списке, а также записывает ее в поле graph_as_matrix_weight
         '''
         N, M = [int(x) for x in input().split()]
-        graph = {v: {k: 0 for k in range(N)} for v in range(N)}
+        graph = {v: {k: float('+inf') for k in range(N)} for v in range(N)}
         for edge in range(M):
             a, b, c = [int(x) for x in input().split()]
             graph[a][b] = c             # Здесь можно было записывать вес, см. ниже
@@ -175,6 +175,7 @@ class Graph:
             raise AssertionError("Граф должен быть задан через метод read_graph_as_matrix_weight()")
 
         d = {v: float('+inf') for v in self.graph_as_matrix_weight}     # Сначала везде путь - бесконечность
+        paths = {v: [] for v in self.graph_as_matrix_weight}            # Пустые пути
         d[start] = 0    # До начальной точки путь имеет длину 0
         used = set()    # Инициализация
         while len(used) != len(self.graph_as_matrix_weight):                        # Пока все вершины не помечены:
@@ -184,19 +185,31 @@ class Graph:
                     current = v                                                     # устанавливаем эту вершину как "рабочую"
                     min_d = d[v]                                                    # устанавливаем текущий минимум на кратчайший путь до "рабочей" вершины,
                                                                                     # таким образом, в конце цикла мы имеем: current - наша "рабочая" вершина - указывает на непомеченную вершину с минимальным путем из start, а min_d - на длину этого пути
+            paths[current] += [current]
             used.add(current)                                                       # закидываем "рабочую" вершину в помеченные
             for neighbour in self.graph_as_matrix_weight[current]:                  # для каждого соседа "рабочей" вершины:
                 l = d[current] + self.graph_as_matrix_weight[current][neighbour]    # а могли ли мы более выгодно прийти в соседа из "рабочей" вершины через одно ребро?
                 if l < d[neighbour]:                                                # считаем путь в таком случае и сверяем с текущим минимальным путем до соседа
                     d[neighbour] = l                                                # если оказался меньше, то обновляем значение
-        return d
+                    paths[neighbour] = paths[current] + [neighbour]                 # и делаем путь до этого соседа следующим: путь до "рабочей" вершины + сосед
+
+        for i in range(1, len(paths)):                                              # Но тут проблема: в листе пути повторяются точки. Мы уберем повторения в цикле
+            j = 0                                                                   # Для каждого пути
+            while True:
+                if paths[i][j] == paths[i][j+1]:                                    # Если совпадает со следующим, удаляем
+                    paths[i].pop(j)
+                    j = 0
+                    continue
+                j += 1
+                if j == len(paths[i])-1:                                            # Организация счетчика
+                    break
+        return d, paths
 
 
+# Тестирование класса, пожалуйста, не обращайте внимания на этот код
 g = Graph()
-g.read_graph_as_lists()
-g.dfs_list_graph()
-print(g.get_spanning_tree_dfs())
-print(g.get_spanning_tree_bfs())
+g.read_graph_as_matrix_weight()
+print(g.get_shortest_paths_from_vertex(0))
 #g.read_graph_as_matrix_weight()
 #print(g.bfs_fire_list_graph(0))
 #print(g.spanning_tree)
