@@ -1,14 +1,19 @@
 class Graph:
+    """
+    Класс graph для работы с графами. Умеет многое, но не все: функционал будет расширяться по мере необходимости
+    """
 
     graph_as_matrix = []    # Граф в виде матрицы смежности
     graph_as_matrix_weight = [] # То же самое, но с весами
     graph_as_list = []      # Граф в виде списка смежности
     number_of_components = 1    # Число компонент связности графа
     dfs_used = None
+    spanning_tree_dfs = []
     bfs_fired = None
     spanning_tree = []      # Остовное дерево графа. Имеет не очень хороший вид, пример: [[1, 2], [2, 3]], где 1, 2, 3 - вершины
     bfs_time = {}           # Время поджига bfs, т.е. на какой итерации bfs_fire какая вершина загорелась. Имеет стркутуру словаря
 
+    # 1
     def read_graph_as_matrix(self):
         '''
         Считывает граф как матрицу смежности, т.е. A[0][1] будет 1, если есть путь из 0 в 1.
@@ -23,6 +28,7 @@ class Graph:
         self.graph_as_matrix = graph    # Записываем в поле экземпляра
         return graph                    # Возвращаем как результат
 
+    # 1
     def read_graph_as_matrix_weight(self):
         '''
         Считывает взвешенный граф как матрицу смежности, т.е. A[0][1] будет x, если есть путь из 0 в 1 с весом x.
@@ -37,6 +43,7 @@ class Graph:
         self.graph_as_matrix_weight = graph    # Записываем в поле экземпляра
         return graph                    # Возвращаем как результат
 
+    # 1
     def read_graph_as_lists(self):
         '''
         Считывает граф как лист "смежности", т.е. A[0] будет списком из всех вершин, смежных с вершиной 0
@@ -73,8 +80,19 @@ class Graph:
         for neighbour in self.graph_as_list[vertex]:    # для каждого её соседа,
             if neighbour not in self.dfs_used:          # если его мы не прогоняли по нашему алгоритму, то
                 self.dfs_list_graph(neighbour)          # запускаем прогонку с началом в этом соседе.
+                self.spanning_tree_dfs.append([vertex, neighbour])  # Делаем остовное дерево. Внимание, его нужно после прогона отсортировать!
         return self.dfs_used                            # Итак, мы прошли по всей компоненте связности и ни разу не отметили никого два раза.
 
+    # 4
+    def get_spanning_tree_dfs(self):
+        """
+        Ищет остовное дерево, начиная с 0 вершины, через обход в глубину
+        @return: Возвращает лист остовного дерева вида [[0, 1], [1, 2] ... ]
+        """
+        self.dfs_list_graph()
+        return sorted(self.spanning_tree_dfs)
+
+    # 2
     def count_components_dfs(self):
         """
         Считает количество компонент связности в графе, заданном листом, с помощью обхода в глубину.
@@ -116,6 +134,17 @@ class Graph:
         self.bfs_time = time
         return self.bfs_fired
 
+    # 5
+    def get_spanning_tree_bfs(self, vertex=0):
+        """
+        Ищет остовное дерево, начиная с вершины vertex, с помощью обхода в ширину
+        @return: Возвращает лист вида [[0, 1], [1, 2] ... ]
+        """
+        if self.bfs_fired is None:
+            self.bfs_fire_list_graph(vertex)
+        return self.spanning_tree
+
+    # 3
     def count_components_bfs(self):
         """
         Считает количество компонент связности в графе, заданном листом, через обход в ширину.
@@ -133,6 +162,7 @@ class Graph:
         self.number_of_components = number_of_components    # записываем результаты трудов
         return self.number_of_components
 
+    # 6
     def get_shortest_paths_from_vertex(self, start):
         """
         Поиск кратчайших путей из заданной вершины до всех остальных с помощью алгоритма Дейкстры. Граф должен быть
@@ -163,7 +193,11 @@ class Graph:
 
 
 g = Graph()
-g.read_graph_as_matrix_weight()
+g.read_graph_as_lists()
+g.dfs_list_graph()
+print(g.get_spanning_tree_dfs())
+print(g.get_spanning_tree_bfs())
+#g.read_graph_as_matrix_weight()
 #print(g.bfs_fire_list_graph(0))
 #print(g.spanning_tree)
-print(g.get_shortest_paths_from_vertex(0))
+#print(g.get_shortest_paths_from_vertex(0))
