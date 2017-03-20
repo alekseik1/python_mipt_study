@@ -292,6 +292,25 @@ class Graph:
                                                                 # но перед этим мы проверяем, не замкнет ли ребро цикл. Как? Проверкой компонент, разумеется, вон же, выше (if comp[v1] != comp[v2])
                                                                 # А когда ребро добавляется в дерево, его компонента становится равна компоненте всего дерева, вот и все.
 
+    # 10
+    def topological_sort(self):
+        n = self.N
+        Visited = [False] * (n + 1)
+        Ans = []
+        for i in range(1, n + 1):
+            if not Visited(i):
+                a, b = self.__DFS(i)
+                Ans.append(a)
+                Visited = b
+        Ans = Ans[::-1]
+
+    def __DFS(self, start, Visited, Ans):
+        Visited[start] = True
+        V = self.graph_as_matrix
+        for u in V[start]:
+            if not Visited[u]:
+                self.__DFS(u)
+        return start, Visited
 # Тестирование класса, пожалуйста, не обращайте внимания на этот код
 g = Graph()
 g.read_graph_as_matrix_weight()
