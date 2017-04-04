@@ -1,6 +1,6 @@
 from collections import deque
 
-def sp(a):
+def to_chars(a):
     A = []
     if int(a[0])-2 > 0 and int(a[1])-1 > 0:
         b=str(int(a[0])-2)+str(int(a[1])-1)
@@ -29,54 +29,54 @@ def sp(a):
     return A
 
 def rename(A1):
-    if A1[0]=='a':
+    if A1[0] == 'a':
         A1 = '1'+A1[1]
         return(A1)
-    if A1[0]=='b':
+    if A1[0] == 'b':
         A1 = '2'+A1[1]
         return(A1)
-    if A1[0]=='c':
+    if A1[0] == 'c':
         A1 = '3'+A1[1]
         return(A1)
-    if A1[0]=='d':
+    if A1[0] == 'd':
         A1 = '4'+A1[1]
         return(A1)
-    if A1[0]=='e':
+    if A1[0] == 'e':
         A1 = '5'+A1[1]
         return(A1)
-    if A1[0]=='f':
+    if A1[0] == 'f':
         A1 = '6'+A1[1]
         return(A1)
-    if A1[0]=='g':
+    if A1[0] == 'g':
         A1 = '7'+A1[1]
         return(A1)
-    if A1[0]=='h':
+    if A1[0] == 'h':
         A1 = '8'+A1[1]
         return(A1)
 
-def rerename(A1):
-    if A1[0]=='1':
+def back_rename(A1):
+    if A1[0] == '1':
         A1 = 'a'+A1[1]
         return(A1)
-    if A1[0]=='2':
+    if A1[0] == '2':
         A1 = 'b'+A1[1]
         return(A1)
-    if A1[0]=='3':
+    if A1[0] == '3':
         A1 = 'c'+A1[1]
         return(A1)
-    if A1[0]=='4':
+    if A1[0] == '4':
         A1 = 'd'+A1[1]
         return(A1)
-    if A1[0]=='5':
+    if A1[0] == '5':
         A1 = 'e'+A1[1]
         return(A1)
-    if A1[0]=='6':
+    if A1[0] == '6':
         A1 = 'f'+A1[1]
         return(A1)
-    if A1[0]=='7':
+    if A1[0] == '7':
         A1 = 'g'+A1[1]
         return(A1)
-    if A1[0]=='8':
+    if A1[0] == '8':
         A1 = 'h'+A1[1]
         return(A1)
 
@@ -90,7 +90,7 @@ def bfs(start):
     p = dict()
     while q:
         current = q.popleft()
-        for next in sp(current):
+        for next in to_chars(current):
             if next not in visited:
                 p[next] = current
                 dist[next] = dist[current] + 1
@@ -98,21 +98,18 @@ def bfs(start):
                 visited.add(next)
     return p
 
-A1= input()
-A1=rename(A1)
-
-A2= input()
-A2=rename(A2)
-
+A1 = input()
+A1 = rename(A1)
+A2 = input()
+A2 = rename(A2)
 ans = []
 order = bfs(A1)
 vertex = A2
 while vertex != A1:
     ans.append(vertex)
     vertex = order[vertex]
-
 ans = ans[::-1]
-print(rerename(A1))
+print(back_rename(A1))
 for i in range(len(ans)):
-    ans[i] = rerename(ans[i])
+    ans[i] = back_rename(ans[i])
     print(ans[i])
