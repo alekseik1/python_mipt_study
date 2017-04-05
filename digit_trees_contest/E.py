@@ -61,32 +61,21 @@ class Tree:
         if node.parent is not None:
             self._updateHeight(node.parent)
 
-    def check(self, root='f'):
-        if root == 'f':
+    def check(self, root="first"):
+        if root == "first":
             root = self.root
-        if root.left is None:
-            if root.right is None:
-                return True
-            if root.right.height > 1:
-                return True
-            else:
-                return False
-        if root.right is None:
-            if root.left is None:
-                return True
-            if root.left.height > 1:
-                return True
-            else:
-                return False
-        if abs(root.left.height - root.right.height) > 1:
-            return False
-        if root.left is not None:
-            if not self.check(root.left):
-                return False
-        if root.right is not None:
-            if not self.check(root.right):
-                return False
-        return True
+            if root is None:
+                return 1
+        l = root.left
+        r = root.right
+        if l is None and r is None:
+            return 1
+        elif l is not None and r is None:
+            return l.height == 1
+        elif l is None and r is not None:
+            return r.height == 1
+        else:
+            return abs(l.height - r.height) <= 1 and self.check(l) and self.check(r)
 
 tree = Tree()
 for x in map(int, input().split()):
