@@ -1,53 +1,67 @@
 class Node:
     def __init__(self, data=None):
         self.data = data
+        self.parent = None
         self.left = None
         self.right = None
+        self.height = 1
 
 
 class Tree:
-    h = 1
-    h_res = []
     def __init__(self):
         self.root = None
 
     def add(self, data):
+        new_node = Node(data)
         if self.root is None:
-            self.root = Node(data)
+            self.root = new_node
         else:
-            self._insert(self.root, data)
+            self._insert(self.root, new_node)
 
-    def _insert(self, curr, data):
-        if curr.data == data:
+    def _insert(self, curr, new):
+        if curr.data == new.data:
             return
-        if curr.data > data:
-            next = curr.left
-            if next is None:
-                curr.left = Node(data)
+        if curr.data > new.data:
+            if curr.left is None:
+                curr.left = new
+                new.parent = curr
+                self._updateHeight(curr)
                 return
+            next = curr.left
         else:
             next = curr.right
             if next is None:
-                curr.right = Node(data)
+                curr.right = new
+                new.parent = curr
+                self._updateHeight(curr)
                 return
-        self._insert(next, data)
+        self._insert(next, new)
 
-    def print(self, root="first_iter"):
-        if root == "first_iter":
-            root = self.root
+    def print(self):
+        self._printNode(self.root)
+
+    def _printNode(self, root):
         if root is None:
             return
         if root.left is not None:
-            self.h += 1
-            self.print(root.left)
-        #print(root.data, end=" ")
+            self._printNode(root.left)
+        print(root.data, end=" ")
         if root.right is not None:
-            self.h += 1
-            self.print(root.right)
-        self.h_res.append(self.h)
+            self._printNode(root.right)
+
+    def _updateHeight(self, node):
+        l = node.left
+        r = node.right
+        h1 = h2 = 0
+        if l is not None:
+            h1 = l.height
+        if r is not None:
+            h2 = r.height
+        node.height = max(h1, h2) + 1
+        if node.parent is not None:
+            self._updateHeight(node.parent)
 
 tree = Tree()
 for x in map(int, input().split()):
     tree.add(x)
-tree.print()  # ничего не печатает xD
-print(tree.h_res)
+print(tree.root.height)
