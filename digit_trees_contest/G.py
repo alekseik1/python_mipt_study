@@ -30,13 +30,21 @@ class Tree:
                 return
         self._insert(next, data)
 
-    def print(self, root="first_iter"):
-        if root == "first_iter":
-            root = self.root
-        if root is None:
+    def print(self):
+        if self.root is None:
             return
-        if root.left is not None:
-            self.print(root.left)
-        print(root.data, end=" ")
-        if root.right is not None:
-            self.print(root.right)
+
+        Q = [self.root]
+        while Q:
+            root = Q.pop(0)
+            print(root.data, end=" ")
+            if root.left is not None:
+                Q.append(root.left)
+            if root.right is not None:
+                Q.append(root.right)
+
+
+tree = Tree()
+for x in map(int, input().split()):
+    tree.add(x)
+tree.print()

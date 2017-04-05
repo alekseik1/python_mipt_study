@@ -5,7 +5,7 @@ def merge(left, right):
             res.append(left.pop(0))
         else:
             res.append(right.pop(0))
-    if not(left):
+    if not left:
         res += right
     else:
         res += left
