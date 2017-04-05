@@ -16,9 +16,7 @@ class Tree:
             self._insert(self.root, data)
 
     def _insert(self, curr, data):
-        if curr.data == data:
-            return
-        if curr.data > data:
+        if curr.data >= data:
             next = curr.left
             if next is None:
                 curr.left = Node(data)
@@ -30,8 +28,8 @@ class Tree:
                 return
         self._insert(next, data)
 
-    def print(self, root="first_iter"):
-        if root == "first_iter":
+    def print(self, root="first"):
+        if root == "first":
             root = self.root
         if root is None:
             return
@@ -42,6 +40,6 @@ class Tree:
             self.print(root.right)
 
 tree = Tree()
-for x in [7, 3, 2, 1, 9, 5, 4, 6, 8]:
+for x in map(int, input().split()):
     tree.add(x)
-tree.print()  # напечатает 1 2 3 4 5 6 7 8 9
+tree.print()
