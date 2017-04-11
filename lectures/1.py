@@ -25,5 +25,17 @@ def z_function(s):
         z[i] = x
     return z
 
+def count_different_substrings(s):
+    n = len(s)
+    start = s[0]
+    res = 0
+    for i in range(1, n):
+        t = start[::-1]
+        k = len(t) - max(z_function(t))
+        res += k
+        start += s[i]
+    return res
+
 print(z_function_trivial('abacaba'))
 print(z_function('abacaba'))
+print(count_different_substrings('abacaba'))
