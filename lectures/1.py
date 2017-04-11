@@ -14,6 +14,7 @@ def z_function_trivial(s):
 def z_function(s):
     z = [0]*len(s)
     left = right = 0
+    x = 0
     for i in range(1, len(s)):
         if i <= right:
             x = min(z[i-left], right-i+1)
