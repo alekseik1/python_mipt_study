@@ -1,3 +1,7 @@
+'''
+More info can be found here:
+http://e-maxx.ru/algo/z_function
+'''
 def z_function_trivial(s):
     n = len(s)
     z = [0]*n
