@@ -9,14 +9,15 @@ class Turing:
     data = []
     finish = False
 
-    def __init__(self, rules='rules.txt'):
-        self.state = str(input("Введите начальное состояние: "))
+    def __init__(self, rules='rules.txt', data='data.txt', state='0'):
+        self.state = state
+        #self.state = str(input("Введите начальное состояние: "))
         with open(rules) as f:
             for i in f.read().split('\n'):
                 self.commands.extend(re.findall('^(.)q(\d+)->(.)(q(\d+)(.)|STOP)$', i))
         # print(self.commands)
 
-        with open('data.txt', 'r') as f:
+        with open(data, 'r') as f:
             self.data.extend('B')
             self.data.extend([x for x in f.read()])
             self.data.extend('B')
@@ -54,7 +55,5 @@ class Turing:
     def print(self):
         print(*self.data)
 
-
-mult = Turing('mult2.txt')
-mult.calc().print()
-
+move = Turing('move.txt')
+move.calc().print()
