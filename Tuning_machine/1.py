@@ -8,6 +8,7 @@ class Turing:
     state = '1'
     data = []
     where = 0
+    finish = False
 
     def __init__(self):
         self.state = str(input("Введите начальное состояние: "))
@@ -29,14 +30,27 @@ class Turing:
             if self.commands[i][0] == self.data[s] and self.commands[i][1] == self.state: # Наш клиент
                 self.state = self.commands[i][4]
                 self.data[s] = self.commands[i][2]
-                if self.commands[i][3] == 'STOP':    # Заканчиваем наше выступление
-                    return
+                if self .commands[i][3] == 'STOP':    # Заканчиваем наше выступление
+                    self.finish = True
+                    return 0
                 if self.commands[i][5] == 'R':
-                    self.start(s+1)
+                    return 1
                 if self.commands[i][5] == 'L':
-                    self.start(s-1)
+                    return -1
                 break
 
+    def calc(self):
+        where = 1
+        while True:
+            a = self.start(where)
+            if a == 1:
+                where += 1
+            elif a == -1:
+                where -= 1
+            else:
+                break
+
+
 t = Turing()
-t.start()
+t.calc()
 print(t.data)
