@@ -1,0 +1,6 @@
+0q1->0q1R
+1q1->1q1R
+Bq1->0q2L
+0q2->0q2L
+1q2->1q2L
+Bq2->BSTOPH
