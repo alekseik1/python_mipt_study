@@ -55,5 +55,6 @@ class Turing:
     def print(self):
         print(*self.data)
 
-move = Turing('move.txt')
+move = Turing('2.4.txt')
 move.calc().print()
+

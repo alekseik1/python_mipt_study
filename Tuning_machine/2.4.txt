@@ -1,0 +1,8 @@
+Bq0->Bq0R
+aq0->aq1R
+bq0->bq1R
+aq1->Bq3R
+bq1->Bq3R
+aq3->aq3R
+bq3->bq3R
+Bq3->BSTOP
