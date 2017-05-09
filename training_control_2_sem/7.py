@@ -13,12 +13,14 @@ def DFS(start):
     for u in V[start]:
         if Color[u] == 0:
             Color[u] = 3 - Color[start]
-            DFS(u) 
+            DFS(u)
         elif Color[u] == Color[start]:
             IsBipartite = False
+            print('NO')
+            exit(0)
 
 for i in range(1, n + 1): 
-    if Color[i] == 0: 
+    if Color[i] == 0:
         Color[i] = 1
         DFS(i)
 if IsBipartite == True:
