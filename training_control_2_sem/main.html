@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+        <meta charset="utf-8" />
+        <title>Тренировочная контрольная работа</title>
+        <link rel="stylesheet" href="http://judge.mipt.ru/mipt_cs_on_python3/theme/css/main.css" />
+        <link rel="icon" type="image/png" href="http://judge.mipt.ru/mipt_cs_on_python3/favicon.png" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <div id="wrap">
+            <header id="banner" class="body">
+                    <img src="http://judge.mipt.ru/mipt_cs_on_python3/images/logo.svg" class="logo" />
+                    <nav><ul>
+                        <li><a href="http://judge.mipt.ru/mipt_cs_on_python3">Главная</a></li>
+                    </ul></nav>
+            </header><!-- /#banner -->
+            <div id="main"
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="http://judge.mipt.ru/mipt_cs_on_python3/labs/lab28.html" rel="bookmark"
+           title="Permalink to Тренировочная контрольная работа">Тренировочная контрольная работа</a></h1>
+    </header>
+      <nav class="toc">
+      <div class="toc" id="">
+
+<ul class="simple">
+<li><a class="reference internal" href="#id3" id="id54">Примеры задач</a><ul>
+<li><a class="reference internal" href="#id4" id="id55">1. Ход ладьи</a><ul>
+<li><a class="reference internal" href="#id5" id="id56">Ввод</a></li>
+<li><a class="reference internal" href="#id6" id="id57">Вывод</a></li>
+<li><a class="reference internal" href="#id7" id="id58">Ввод</a></li>
+<li><a class="reference internal" href="#id8" id="id59">Вывод</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id9" id="id60">2. Список факториалов</a><ul>
+<li><a class="reference internal" href="#id10" id="id61">Ввод</a></li>
+<li><a class="reference internal" href="#id11" id="id62">Вывод</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id12" id="id63">3. Симметричная последовательность</a><ul>
+<li><a class="reference internal" href="#id13" id="id64">Ввод</a></li>
+<li><a class="reference internal" href="#id14" id="id65">Вывод</a></li>
+<li><a class="reference internal" href="#id15" id="id66">Ввод</a></li>
+<li><a class="reference internal" href="#id16" id="id67">Вывод</a></li>
+<li><a class="reference internal" href="#id17" id="id68">Ввод</a></li>
+<li><a class="reference internal" href="#id18" id="id69">Вывод</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id19" id="id70">4. Сначала нечетные</a><ul>
+<li><a class="reference internal" href="#id20" id="id71">Ввод</a></li>
+<li><a class="reference internal" href="#id21" id="id72">Вывод</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id22" id="id73">5. Автомат со сдачей</a><ul>
+<li><a class="reference internal" href="#id23" id="id74">Ввод</a></li>
+<li><a class="reference internal" href="#id24" id="id75">Вывод</a></li>
+<li><a class="reference internal" href="#id25" id="id76">Ввод</a></li>
+<li><a class="reference internal" href="#id26" id="id77">Вывод</a></li>
+<li><a class="reference internal" href="#id27" id="id78">Ввод</a></li>
+<li><a class="reference internal" href="#id28" id="id79">Вывод</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id29" id="id80">6. Полный граф</a><ul>
+<li><a class="reference internal" href="#id30" id="id81">Входные данные</a></li>
+<li><a class="reference internal" href="#id31" id="id82">Выходные данные</a></li>
+<li><a class="reference internal" href="#id32" id="id83">Ввод</a></li>
+<li><a class="reference internal" href="#id33" id="id84">Вывод</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id34" id="id85">7. Банкет</a><ul>
+<li><a class="reference internal" href="#id35" id="id86">Входные данные</a></li>
+<li><a class="reference internal" href="#id36" id="id87">Выходные данные</a></li>
+<li><a class="reference internal" href="#id37" id="id88">Ввод</a></li>
+<li><a class="reference internal" href="#id38" id="id89">Вывод</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id39" id="id90">8. Кратчайший цикл</a><ul>
+<li><a class="reference internal" href="#id40" id="id91">Ввод</a></li>
+<li><a class="reference internal" href="#id41" id="id92">Вывод</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id42" id="id93">9. Минимальный и максимальный путь к листу</a><ul>
+<li><a class="reference internal" href="#id43" id="id94">Формат входных данных</a></li>
+<li><a class="reference internal" href="#id44" id="id95">Формат выходных данных</a></li>
+<li><a class="reference internal" href="#id45" id="id96">Ввод</a></li>
+<li><a class="reference internal" href="#id46" id="id97">Вывод</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id47" id="id98">10. Максимальные подпалиндромы</a><ul>
+<li><a class="reference internal" href="#id48" id="id99">Входные данные</a></li>
+<li><a class="reference internal" href="#id49" id="id100">Выходные данные</a></li>
+<li><a class="reference internal" href="#id50" id="id101">Ввод</a></li>
+<li><a class="reference internal" href="#id51" id="id102">Вывод</a></li>
+<li><a class="reference internal" href="#id52" id="id103">Ввод</a></li>
+<li><a class="reference internal" href="#id53" id="id104">Вывод</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+      </nav>
+      <br/>
+      <br/>
+    
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id54">Примеры задач</a></h2>
+<p>Сложность задач и их темы соответствуют задачам из контрольной работы.</p>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id55">1. Ход ладьи</a></h3>
+<p>Шахматная ладья ходит по горизонтали или вертикали. Даны две различные клетки шахматной доски, определите, может ли ладья попасть с первой клетки на вторую одним ходом. Программа получает на вход четыре числа от 1 до 8 каждое, задающие номер столбца и номер строки сначала для первой клетки, потом для второй клетки. Программа должна вывести YES, если из первой клетки ходом ладьи можно попасть во вторую или NO в противном случае.</p>
+<p>Для простоты можно не рассматривать случай, когда данные клетки совпадают.</p>
+<div class="section" id="id5">
+<h4><a class="toc-backref" href="#id56">Ввод</a></h4>
+<div class="highlight"><pre><span></span>1
+1
+1
+8
+</pre></div>
+</div>
+<div class="section" id="id6">
+<h4><a class="toc-backref" href="#id57">Вывод</a></h4>
+<div class="highlight"><pre><span></span>YES
+</pre></div>
+</div>
+<div class="section" id="id7">
+<h4><a class="toc-backref" href="#id58">Ввод</a></h4>
+<div class="highlight"><pre><span></span>3
+4
+4
+3
+</pre></div>
+</div>
+<div class="section" id="id8">
+<h4><a class="toc-backref" href="#id59">Вывод</a></h4>
+<div class="highlight"><pre><span></span>NO
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3><a class="toc-backref" href="#id60">2. Список факториалов</a></h3>
+<p>По данному числу N распечатайте все факториалы, не превосходящие N, в порядке возрастания.</p>
+<div class="section" id="id10">
+<h4><a class="toc-backref" href="#id61">Ввод</a></h4>
+<div class="highlight"><pre><span></span>24
+</pre></div>
+</div>
+<div class="section" id="id11">
+<h4><a class="toc-backref" href="#id62">Вывод</a></h4>
+<div class="highlight"><pre><span></span>1 2 6 24
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3><a class="toc-backref" href="#id63">3. Симметричная последовательность</a></h3>
+<p>Последовательность чисел назовем симметричной, если она одинаково читается как слева направо, так и справа налево. Например, следующие последовательности являются симметричными:</p>
+<blockquote>
+<p>1 2 3 4 5 4 3 2 1</p>
+<p>1 2 1 2 2 1 2 1</p>
+</blockquote>
+<p>Вашей программе будет дана последовательность чисел. Требуется определить, какое минимальное количество и каких чисел надо приписать в конец этой последовательности, чтобы она стала симметричной.</p>
+<p>Программа получает на вход количество элементов исходной последовательности N (1≤N≤100). Далее идут N чисел — элементы этой последовательности, натуральные числа от 1 до 9.</p>
+<p>Выведите сначала число M — минимальное количество элементов, которое надо дописать к последовательности, а потом M чисел (каждое от 1 до 9) — числа, которые надо дописать к последовательности.</p>
+<div class="section" id="id13">
+<h4><a class="toc-backref" href="#id64">Ввод</a></h4>
+<div class="highlight"><pre><span></span>9
+1 2 3 4 5 4 3 2 1
+</pre></div>
+</div>
+<div class="section" id="id14">
+<h4><a class="toc-backref" href="#id65">Вывод</a></h4>
+<div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+<div class="section" id="id15">
+<h4><a class="toc-backref" href="#id66">Ввод</a></h4>
+<div class="highlight"><pre><span></span>5
+1 2 1 2 2
+</pre></div>
+</div>
+<div class="section" id="id16">
+<h4><a class="toc-backref" href="#id67">Вывод</a></h4>
+<div class="highlight"><pre><span></span>3
+1 2 1
+</pre></div>
+</div>
+<div class="section" id="id17">
+<h4><a class="toc-backref" href="#id68">Ввод</a></h4>
+<div class="highlight"><pre><span></span>5
+1 2 3 4 5
+</pre></div>
+</div>
+<div class="section" id="id18">
+<h4><a class="toc-backref" href="#id69">Вывод</a></h4>
+<div class="highlight"><pre><span></span>4
+4 3 2 1
+</pre></div>
+</div>
+</div>
+<div class="section" id="id19">
+<h3><a class="toc-backref" href="#id70">4. Сначала нечетные</a></h3>
+<p>Дан массив. Отсортировать его так, чтобы сначала шли нечетные по возрастанию, потом четные во убыванию.</p>
+<p>Вход: на первой строке натуральное нечетное N (N &lt; 100, нечетное) – количество элементов. На второй N элементов.</p>
+<p>Выход: Отсортированный требуемым образом массив.</p>
+<div class="section" id="id20">
+<h4><a class="toc-backref" href="#id71">Ввод</a></h4>
+<div class="highlight"><pre><span></span>3
+3 2 1
+</pre></div>
+</div>
+<div class="section" id="id21">
+<h4><a class="toc-backref" href="#id72">Вывод</a></h4>
+<div class="highlight"><pre><span></span>2 1 3
+</pre></div>
+</div>
+</div>
+<div class="section" id="id22">
+<h3><a class="toc-backref" href="#id73">5. Автомат со сдачей</a></h3>
+<p>Одна фирма обслуживает автоматы по продаже чая и кофе.</p>
+<p>Стоимость стакана чая и кофе в автомате равна пяти рублям. Автомат принимает монеты по 5 и 10 рублей, а также купюры в 10, 50 и 100 рублей. Когда покупателю надо выдавать сдачу (т.е. когда пассажир бросил в автомат десятирублёвую монету или 10-, 50- или 100-рублёвую купюру), автомат выдаёт сдачу пятирублёвыми монетами; если же покупатель бросил в автомат пятирублёвую монету, то автомат её сохраняет и может использовать для сдачи следующим покупателям.</p>
+<p>Ясно, что, чтобы обеспечить возможность выдачи сдачи всем покупателям, может потребоваться изначально загрузить в автомат некоторое количество пятирублёвых монет. Сейчас автоматы проходят испытания с целью определить минимальное количество монет, которые надо загрузить в автомат перед началом дня. Вам дан протокол одного из таких испытаний: известен порядок, в котором покупатели оплачивали свои покупки различными монетами и купюрами. Определите, какое минимальное количество пятирублёвых монет должно было изначально находиться в автомате, чтобы всем покупателям хватило сдачи.</p>
+<p>В первой строке входных данных находится одно натуральное число N — количество покупок в автомате, которые были совершены в ходе испытания (1≤N≤50000). Во второй строке находятся N натуральных чисел, каждое из которых равно номиналу монеты или купюры, которую использовал очередной покупатель для оплаты; каждый номинал может принимать одно из четырёх значений: 5, 10, 50 или 100.</p>
+<p>Выведите одно число — минимальное количество пятирублёвых монет, которые надо было загрузить в автомат изначально, чтобы всем покупателям хватило сдачи.</p>
+<div class="section" id="id23">
+<h4><a class="toc-backref" href="#id74">Ввод</a></h4>
+<div class="highlight"><pre><span></span>3
+10 5 100
+</pre></div>
+</div>
+<div class="section" id="id24">
+<h4><a class="toc-backref" href="#id75">Вывод</a></h4>
+<div class="highlight"><pre><span></span>19
+</pre></div>
+</div>
+<div class="section" id="id25">
+<h4><a class="toc-backref" href="#id76">Ввод</a></h4>
+<div class="highlight"><pre><span></span>3
+5 5 10
+</pre></div>
+</div>
+<div class="section" id="id26">
+<h4><a class="toc-backref" href="#id77">Вывод</a></h4>
+<div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+<div class="section" id="id27">
+<h4><a class="toc-backref" href="#id78">Ввод</a></h4>
+<div class="highlight"><pre><span></span>4
+50 5 5 5
+</pre></div>
+</div>
+<div class="section" id="id28">
+<h4><a class="toc-backref" href="#id79">Вывод</a></h4>
+<div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+<div class="section" id="id29">
+<h3><a class="toc-backref" href="#id80">6. Полный граф</a></h3>
+<p>Неориентированный граф с кратными рёбрами называется полным, если любая пара его различных вершин соединена хотя бы одним ребром. Для заданного списком ребер графа проверьте, является ли он полным.</p>
+<div class="section" id="id30">
+<h4><a class="toc-backref" href="#id81">Входные данные</a></h4>
+<p>Сначала вводятся числа n ( 1 &lt;= n &lt;= 100) – количество вершин в графе и m ( 1 &lt;= m &lt;= 10000) – количество ребер. Затем следует m пар чисел – ребра графа.</p>
+</div>
+<div class="section" id="id31">
+<h4><a class="toc-backref" href="#id82">Выходные данные</a></h4>
+<p>Выведите  «YES», если граф является полным, и «NO» в противном случае.</p>
+</div>
+<div class="section" id="id32">
+<h4><a class="toc-backref" href="#id83">Ввод</a></h4>
+<div class="highlight"><pre><span></span>5 18
+1 2
+1 3
+1 3
+1 4
+1 4
+1 4
+1 5
+1 5
+2 3
+2 4
+2 4
+2 5
+3 4
+3 4
+3 4
+3 5
+3 5
+4 5
+</pre></div>
+</div>
+<div class="section" id="id33">
+<h4><a class="toc-backref" href="#id84">Вывод</a></h4>
+<div class="highlight"><pre><span></span>YES
+</pre></div>
+</div>
+</div>
+<div class="section" id="id34">
+<h3><a class="toc-backref" href="#id85">7. Банкет</a></h3>
+<p>На банкет были приглашены N Очень Важных Персон (ОВП). Были поставлены 2 стола. Столы достаточно большие, чтобы все посетители банкета могли сесть за любой из них. Проблема заключается в том, что некоторые ОВП не ладят друг с другом и не могут сидеть за одним столом. Вас попросили определить, возможно ли всех ОВП рассадить за двумя столами.</p>
+<div class="section" id="id35">
+<h4><a class="toc-backref" href="#id86">Входные данные</a></h4>
+<p>В первой строке входных данных содержатся два числа: N и M (1 &lt;= N,M &lt;= 100), где N – количество ОВП, а M – количество пар ОВП, которые не могут сидеть за одним столом. В следующих M строках записано по 2 числа – пары ОВП, которые не могут сидеть за одним столом.</p>
+</div>
+<div class="section" id="id36">
+<h4><a class="toc-backref" href="#id87">Выходные данные</a></h4>
+<p>Если способ рассадить ОВП существует, то  выведите YES в первой строке и номера ОВП, которых необходимо посадить за первый стол, во второй строке. В противном случае в первой и единственной строке выведите NO.</p>
+</div>
+<div class="section" id="id37">
+<h4><a class="toc-backref" href="#id88">Ввод</a></h4>
+<div class="highlight"><pre><span></span>3 2
+1 2
+1 3
+</pre></div>
+</div>
+<div class="section" id="id38">
+<h4><a class="toc-backref" href="#id89">Вывод</a></h4>
+<div class="highlight"><pre><span></span>YES
+1
+</pre></div>
+</div>
+</div>
+<div class="section" id="id39">
+<h3><a class="toc-backref" href="#id90">8. Кратчайший цикл</a></h3>
+<p>Дан ориентированный граф. Необходимо вывести любой из кратчайших циклов. Если ни одного цикла нет, то выведите -1.</p>
+<p>Сложность получившегося алгоритма должна быть <code>O(|V|*(|V| + |E|))</code>.</p>
+<div class="section" id="id40">
+<h4><a class="toc-backref" href="#id91">Ввод</a></h4>
+<div class="highlight"><pre><span></span>7
+A B
+B C
+C D
+D E
+B F
+F E
+E A
+</pre></div>
+</div>
+<div class="section" id="id41">
+<h4><a class="toc-backref" href="#id92">Вывод</a></h4>
+<div class="highlight"><pre><span></span>A B F E A
+</pre></div>
+</div>
+</div>
+<div class="section" id="id42">
+<h3><a class="toc-backref" href="#id93">9. Минимальный и максимальный путь к листу</a></h3>
+<p>Реализуйте бинарное дерево поиска для целых чисел. Программа получает на вход последовательность целых чисел и строит из них дерево. Элементы в деревья добавляются в соответствии с результатом поиска их места. Балансировка дерева не производится.</p>
+<p>Найдите длину минимального пути от корня до листа и длину максимального пути от корня до листа. Сумма двух данных чисел - ответ.</p>
+<div class="section" id="id43">
+<h4><a class="toc-backref" href="#id94">Формат входных данных</a></h4>
+<p>На вход программа получает последовательность различных натуральных чисел меньших 10000.</p>
+</div>
+<div class="section" id="id44">
+<h4><a class="toc-backref" href="#id95">Формат выходных данных</a></h4>
+<p>Выведите единственное число – сумму минимального и максимального путей от корня до листьев.</p>
+</div>
+<div class="section" id="id45">
+<h4><a class="toc-backref" href="#id96">Ввод</a></h4>
+<div class="highlight"><pre><span></span>5 15 18 3
+</pre></div>
+</div>
+<div class="section" id="id46">
+<h4><a class="toc-backref" href="#id97">Вывод</a></h4>
+<div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+<div class="section" id="id47">
+<h3><a class="toc-backref" href="#id98">10. Максимальные подпалиндромы</a></h3>
+<p>Дана непустая строка, длина которой не превышает 1000000. Требуется для каждой позиции  символа в строке найти длину наибольшего палиндрома с центром в этом символе. Строка состоит из букв английского алфавита, большие и маленькие буквы считаются различными. Ограничение времени - 1 секунда.</p>
+<div class="section" id="id48">
+<h4><a class="toc-backref" href="#id99">Входные данные</a></h4>
+<p>Одна строка длины N, 0 &lt; N ≤ 1000000.</p>
+</div>
+<div class="section" id="id49">
+<h4><a class="toc-backref" href="#id100">Выходные данные</a></h4>
+<p>N чисел, разделенные пробелами.</p>
+</div>
+<div class="section" id="id50">
+<h4><a class="toc-backref" href="#id101">Ввод</a></h4>
+<div class="highlight"><pre><span></span>abcd
+</pre></div>
+</div>
+<div class="section" id="id51">
+<h4><a class="toc-backref" href="#id102">Вывод</a></h4>
+<div class="highlight"><pre><span></span>1 1 1 1
+</pre></div>
+</div>
+<div class="section" id="id52">
+<h4><a class="toc-backref" href="#id103">Ввод</a></h4>
+<div class="highlight"><pre><span></span>aaaaa
+</pre></div>
+</div>
+<div class="section" id="id53">
+<h4><a class="toc-backref" href="#id104">Вывод</a></h4>
+<div class="highlight"><pre><span></span>1 3 5 3 1
+</pre></div>
+</div>
+</div>
+</div>
+
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+                <section id="extras" class="body">
+                </section><!-- /#extras -->
+            </div>
+        </div>
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Сайт построен с использованием <a href="http://getpelican.com/">Pelican</a>. За основу оформления взята тема от <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>. Исходные тексты программ, приведённые на этом сайте, распространяются под лицензией <a href="http://www.gnu.org/licenses/quick-guide-gplv3.en.html">GPLv3</a>, все остальные материалы сайта распространяются под лицензией <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.ru">CC-BY-SA</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
