@@ -5,26 +5,34 @@ for i in range(n):
 
 
 class Node:
-    def __init__(self, data=None, left=None, right=None):
+    def __init__(self, data=None):
         self.data = data
-        self.left = left
-        self.right = right
-nodes = []
-for i in range(len(l)):
-    left = None
-    right = None
-    if l[i][1] != -1:
-        left = Node(l[l[i][1]][0]
-    if l[i][2] != -1:
-        right = l[l[i][2]][0]
-    nodes.append(Node(l[i][0], left, right))
+        self.left = None
+        self.right = None
 
-print()
-def check_node(node):
-    if node.left is not None:
-        if node.left > node.data:
-            return False
-    if node.right is not None:
-        if node.right < node.data:
-            return False
-    return True
+
+class Tree:
+    def __init__(self):
+        self.root = None
+
+    def add(self, data):
+        if self.root is None:
+            self.root = Node(data)
+        else:
+            self._insert(self.root, data)
+
+    def _insert(self, curr, data):
+        if curr.data == data:
+            return
+        if curr.data > data:
+            next = curr.left
+            if next is None:
+                curr.left = Node(data)
+                return
+        else:
+            next = curr.right
+            if next is None:
+                curr.right = Node(data)
+                return
+        self._insert(next, data)
+
