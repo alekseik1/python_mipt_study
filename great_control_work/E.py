@@ -6,7 +6,7 @@ for i in range(n):
     for j in range(i, n):
         if abs(l[j]) == abs(l[i]) and l[i] < 0 and i != j:
             r = j - i
-            if 0 < r < M:
+            if r < M and r > 0:
                 m = r
 if M == 10**9:
     print(0)
