@@ -6,9 +6,13 @@ def vopros_1_orientated():
     res = {}
     while True:
         s = input()
-        if s == "": break
+        if s == "":
+            break
         a, b = map(int, s.split())
-        res.update({a: b})
+        try:
+            res.update({a: res[a] + [b]})
+        except KeyError:
+            res.update({a: [b]})
     return res
 
 def vopros_1_nonorientated():
@@ -19,10 +23,17 @@ def vopros_1_nonorientated():
     res = {}
     while True:
         s = input()
-        if s == "": break
+        if s == "":
+            break
         a, b = map(int, s.split())
-        res.update({a: b})
-        res.update({b: a})
+        try:
+            res.update({a: res[a] + [b]})
+        except KeyError:
+            res.update({a: [b]})
+        try:
+            res.update({b: res[b] + [a]})
+        except KeyError:
+            res.update({b: [a]})
     return res
 
 def vopros_2():
@@ -61,4 +72,4 @@ def vopros_3():
     return res
 
 
-print(vopros_2())
+print(vopros_1_nonorientated())
