@@ -305,7 +305,7 @@ class Graph:
                 Ans.append(a)
                 Visited = b
         Ans = Ans[::-1]
-
+    
     def __DFS(self, start, Visited, Ans):
         Visited[start] = True
         V = self.graph_as_matrix
