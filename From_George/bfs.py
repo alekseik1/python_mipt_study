@@ -1,4 +1,4 @@
-'''
+
 def graph_smeg():
     n, m = [int(x) for x in input().split()]
     graph = [[] for i in range(n)]
@@ -28,7 +28,6 @@ graph = graph_smeg()
 d, t = bfs(graph)
 print(d)
 print(t)
-'''
 def lev(a, b):
     if not a:
         return len(b)
